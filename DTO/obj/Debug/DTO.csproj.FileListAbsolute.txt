@@ -1,0 +1,5 @@
+C:\BTL_LTCSDL\BIN\DTO.dll
+C:\BTL_LTCSDL\BIN\DTO.pdb
+C:\BTL_LTCSDL\DTO\obj\Debug\DTO.csprojResolveAssemblyReference.cache
+C:\BTL_LTCSDL\DTO\obj\Debug\DTO.dll
+C:\BTL_LTCSDL\DTO\obj\Debug\DTO.pdb

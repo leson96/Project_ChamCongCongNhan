@@ -1,0 +1,5 @@
+C:\BTL_LTCSDL\BIN\DAL.dll
+C:\BTL_LTCSDL\BIN\DAL.pdb
+C:\BTL_LTCSDL\DAL\obj\Debug\DAL.csprojResolveAssemblyReference.cache
+C:\BTL_LTCSDL\DAL\obj\Debug\DAL.dll
+C:\BTL_LTCSDL\DAL\obj\Debug\DAL.pdb
