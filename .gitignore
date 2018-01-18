@@ -1,5 +1,3 @@
-/BUS/obj
-/ChamCong/obj
-/ChamCong/bin
-/DAL/obj
-/DTO/obj
+obj/
+vs/
+ChamCong/bin/
