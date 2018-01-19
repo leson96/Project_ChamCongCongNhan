@@ -516,6 +516,7 @@
             this.txtTenCN.Name = "txtTenCN";
             this.txtTenCN.Size = new System.Drawing.Size(221, 26);
             this.txtTenCN.TabIndex = 11;
+            this.txtTenCN.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtTenCN_KeyDown);
             // 
             // panel4
             // 

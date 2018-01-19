@@ -829,7 +829,7 @@ namespace ChamCong
             reportViewer1.RefreshReport();
         }
 
-        private void btTimtenCN_Click(object sender, EventArgs e)
+        public void btTimtenCN_Click(object sender, EventArgs e)
         {
             if (txtTenCN.Text == "")
             {
@@ -838,7 +838,7 @@ namespace ChamCong
             }
             try
             {
-                dgvLoadcn.DataSource = cnb.ViewCongNhan("SELECT *FROM CongNhan,ChucVu WHERE CongNhan.MaCV=ChucVu.MaCV AND Ten='" + txtTenCN.Text + "'").ToList();
+                dgvLoadcn.DataSource = cnb.ViewCongNhan("SELECT *FROM CongNhan,ChucVu WHERE CongNhan.MaCV=ChucVu.MaCV AND (Ten='" + txtTenCN.Text + "' OR MaNV='" + txtTenCN.Text + "')").ToList();
             }
             catch (Exception p)
             {
@@ -877,6 +877,30 @@ namespace ChamCong
             reportViewer1.LocalReport.DataSources.Clear();
             reportViewer1.LocalReport.DataSources.Add(rpdt);
             reportViewer1.RefreshReport();
+        }
+        public void timnhanvien()
+        {
+
+                if (txtTenCN.Text == "")
+                {
+                    MessageBox.Show("Khong co du lieu");
+                    return;
+                }
+                try
+                {
+                    dgvLoadcn.DataSource = cnb.ViewCongNhan("SELECT *FROM CongNhan,ChucVu WHERE CongNhan.MaCV=ChucVu.MaCV AND (Ten='" + txtTenCN.Text + "' OR MaNV='" + txtTenCN.Text + "'  )").ToList();
+                }
+                catch (Exception p)
+                {
+                    MessageBox.Show(p.ToString());
+                }
+        }
+        private void txtTenCN_KeyDown(object sender, KeyEventArgs e)
+        {
+            if(e.KeyCode==Keys.Enter)
+            {
+                timnhanvien();
+            }
         }
     }
 }
