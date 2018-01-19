@@ -39,7 +39,7 @@ namespace ChamCong
                     QLCN = new Form1();
                     QLCN.Show();
                 }
-                
+
             }
             catch (Exception)
             {

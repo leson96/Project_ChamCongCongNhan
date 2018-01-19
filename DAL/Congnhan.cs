@@ -61,7 +61,7 @@ namespace DAL
                         CongNhan congnhan = new CongNhan(MaCN, Ho, Ten, GioiTinh, NgaySinh, NoiSinh,
                         CMND, DanToc, TonGiao, QueQuan, DCThuongTru, NoiOHienNay,
                         DienThoaiNha, DienThoaiDD, Email, TTHonNhan, NgayTuyenDung,
-                        NoiLamViec, TrinhDoVanHoa,MaCV,MaHeSoLuong, MaPhuCap,TaiKhoanNganHang,
+                        NoiLamViec, TrinhDoVanHoa, MaCV, MaHeSoLuong, MaPhuCap, TaiKhoanNganHang,
                         NoiCapCMND, NgayCapCMND, Hinh, TinhTrang, QuocTich,
                         MaBHYT, MaBHXH);
                         list.Add(congnhan);
@@ -70,7 +70,7 @@ namespace DAL
                 }
                 return list;
             }
-            catch(SqlException p)
+            catch (SqlException p)
             {
                 throw p;
             }
@@ -110,14 +110,14 @@ namespace DAL
                 {
                     string MaCaLV;
                     string TenCa;
-                    DateTime GioBatDau;
-                    DateTime GioKetThuc;
+                    TimeSpan GioBatDau;
+                    TimeSpan GioKetThuc;
                     while (dr.Read())
                     {
-                        MaCaLV=dr.GetString(0);
-                        TenCa=dr.GetString(1);
-                        GioBatDau = dr.GetDateTime(2);
-                        GioKetThuc = dr.GetDateTime(3);
+                        MaCaLV = dr.GetString(0);
+                        TenCa = dr.GetString(1);
+                        GioBatDau = dr.GetTimeSpan(2);
+                        GioKetThuc = dr.GetTimeSpan(3);
                         CaLamViec clv = new CaLamViec(MaCaLV, TenCa, GioBatDau, GioKetThuc);
                         list.Add(clv);
                     }
@@ -195,15 +195,15 @@ namespace DAL
                 SqlDataReader dr = p.View(sql);
                 if (dr != null)
                 {
-                    string MaCaLV, Thu, MaCN, MaGioLamViec,Ho,Ten,Hinh;
+                    string MaCaLV, Thu, MaCN, MaGioLamViec, Ho, Ten, Hinh;
                     TimeSpan GioToi, GioVe;
                     DateTime NgayThangNam;
                     bool DiTre;
                     TimeSpan Tong;
                     while (dr.Read())
                     {
-                        MaCaLV=dr.GetString(0);
-                        Thu=dr.GetString(1);
+                        MaCaLV = dr.GetString(0);
+                        Thu = dr.GetString(1);
                         GioToi = dr.GetTimeSpan(2);
                         GioVe = dr.GetTimeSpan(3);
                         DiTre = dr.GetBoolean(4);
@@ -214,7 +214,7 @@ namespace DAL
                         Ho = dr.GetString(9);
                         Ten = dr.GetString(10);
                         Hinh = dr.GetString(11);
-                        GioLamViec glv = new GioLamViec(MaCaLV, Thu, GioToi, GioVe, DiTre, Tong, NgayThangNam, MaCN, MaGioLamViec,Ho,Ten,Hinh);
+                        GioLamViec glv = new GioLamViec(MaCaLV, Thu, GioToi, GioVe, DiTre, Tong, NgayThangNam, MaCN, MaGioLamViec, Ho, Ten, Hinh);
                         list.Add(glv);
                     }
                 }
@@ -233,12 +233,13 @@ namespace DAL
                 SqlDataReader dr = p.View(sql);
                 if (dr != null)
                 {
-                    string MaHSL, TenHeSoLuong,HeSL;
+                    string MaHSL, TenHeSoLuong;
+                    int HeSL;
                     while (dr.Read())
                     {
-                        MaHSL=dr.GetString(0);
-                        TenHeSoLuong=dr.GetString(1);
-                        HeSL = dr.GetString(2);
+                        MaHSL = dr.GetString(0);
+                        TenHeSoLuong = dr.GetString(1);
+                        HeSL = dr.GetInt32(2);
                         HeSoLuong hsl = new HeSoLuong(MaHSL, TenHeSoLuong, HeSL);
                         list.Add(hsl);
                     }
@@ -259,11 +260,11 @@ namespace DAL
                 if (dr != null)
                 {
                     string MaHD;
-                    string LoaiHopDong,KyHan;
+                    string LoaiHopDong, KyHan;
                     while (dr.Read())
                     {
-                        MaHD=dr.GetString(0);
-                        LoaiHopDong=dr.GetString(1);
+                        MaHD = dr.GetString(0);
+                        LoaiHopDong = dr.GetString(1);
                         KyHan = dr.GetString(2);
                         HopDong hd = new HopDong(MaHD, LoaiHopDong, KyHan);
                         list.Add(hd);
@@ -335,7 +336,7 @@ namespace DAL
                         TienLuong = dr.GetInt32(6);
                         Thang = dr.GetInt32(0);
                         Nam = dr.GetInt32(1);
-                        Luong l = new Luong(MaLuong, MaHSL,GioLamViec, MaPhuCap, TienLuong, Thang, Nam);
+                        Luong l = new Luong(MaLuong, MaHSL, GioLamViec, MaPhuCap, TienLuong, Thang, Nam);
                         list.Add(l);
                     }
                 }
@@ -358,10 +359,10 @@ namespace DAL
                     int SoTienPhuCap;
                     while (dr.Read())
                     {
-                        MaPhuCap= dr.GetString(0);
-                        TenPhuCap= dr.GetString(1);
+                        MaPhuCap = dr.GetString(0);
+                        TenPhuCap = dr.GetString(1);
                         SoTienPhuCap = dr.GetInt32(2);
-                        PhuCap pc= new PhuCap(MaPhuCap,TenPhuCap,SoTienPhuCap);
+                        PhuCap pc = new PhuCap(MaPhuCap, TenPhuCap, SoTienPhuCap);
                         list.Add(pc);
                     }
                 }
@@ -384,9 +385,9 @@ namespace DAL
                     while (dr.Read())
                     {
                         MaTaiKhoan = dr.GetString(0);
-                        MatKhau= dr.GetString(1);
+                        MatKhau = dr.GetString(1);
                         PhanQuyen = dr.GetString(2);
-                        TaiKhoan tk= new TaiKhoan(MaTaiKhoan,MatKhau,PhanQuyen);
+                        TaiKhoan tk = new TaiKhoan(MaTaiKhoan, MatKhau, PhanQuyen);
                         list.Add(tk);
                     }
                 }
@@ -434,7 +435,7 @@ namespace DAL
             {
                 return p.ExecNonQuery("addcongnhan", CommandType.StoredProcedure, paras);
             }
-            catch(SqlException p)
+            catch (SqlException p)
             {
 
                 throw p;
@@ -469,14 +470,14 @@ namespace DAL
             catch (SqlException p)
             {
 
-                throw;
+                throw p;
             }
         }
-        public int AddLich(string macn,DateTime dt)
+        public int AddLich(string macn, DateTime dt)
         {
             List<SqlParameter> paras = new List<SqlParameter>();
-            paras.Add(new SqlParameter("@macn",macn));
-            paras.Add(new SqlParameter("@ngay",dt));
+            paras.Add(new SqlParameter("@macn", macn));
+            paras.Add(new SqlParameter("@ngay", dt));
             try
             {
                 return p.ExecNonQuery("addlich", CommandType.StoredProcedure, paras);
@@ -493,7 +494,7 @@ namespace DAL
             paras.Add(new SqlParameter("@macalamviec", glv.MaCaLV));
             paras.Add(new SqlParameter("@giotoi", glv.GioToi));
             paras.Add(new SqlParameter("@thu", glv.Thu));
-            paras.Add(new SqlParameter("@giove",glv.GioVe));
+            paras.Add(new SqlParameter("@giove", glv.GioVe));
             paras.Add(new SqlParameter("@ditre", glv.DiTre));
             paras.Add(new SqlParameter("@ngaythangnam", glv.NgayThangNam));
             paras.Add(new SqlParameter("@macn", glv.MaCN));
@@ -522,13 +523,13 @@ namespace DAL
             catch (SqlException p)
             {
 
-                throw;
+                throw p;
             }
         }
         public int AddHopDong(HopDong hopdong)
         {
             List<SqlParameter> paras = new List<SqlParameter>();
-            paras.Add(new SqlParameter("@mahopdong",hopdong.MaHD));
+            paras.Add(new SqlParameter("@mahopdong", hopdong.MaHD));
             paras.Add(new SqlParameter("@loaihopdong", hopdong.LoaiHopDong));
             paras.Add(new SqlParameter("@kyhan", hopdong.KyHan));
             try
@@ -544,7 +545,7 @@ namespace DAL
         public int AddKyHopDong(KyHopDong kyhopdong)
         {
             List<SqlParameter> paras = new List<SqlParameter>();
-            paras.Add(new SqlParameter("@mahd",kyhopdong.MaHD));
+            paras.Add(new SqlParameter("@mahd", kyhopdong.MaHD));
             paras.Add(new SqlParameter("@tungay", kyhopdong.TuNgay));
             paras.Add(new SqlParameter("@denngay", kyhopdong.DenNgay));
             paras.Add(new SqlParameter("@ngaykyhopdong", kyhopdong.NgayKyHD));
@@ -560,11 +561,11 @@ namespace DAL
                 throw p;
             }
         }
-        public int AddLuong(string macn,DateTime dt)
+        public int AddLuong(string macn, DateTime dt)
         {
             List<SqlParameter> paras = new List<SqlParameter>();
-            paras.Add(new SqlParameter("@macn",macn));
-            paras.Add(new SqlParameter("@ngay",dt));
+            paras.Add(new SqlParameter("@macn", macn));
+            paras.Add(new SqlParameter("@ngay", dt));
             try
             {
                 return p.ExecNonQuery("addluong", CommandType.StoredProcedure, paras);
@@ -578,7 +579,7 @@ namespace DAL
         public int AddPhuCap(PhuCap phucap)
         {
             List<SqlParameter> paras = new List<SqlParameter>();
-            paras.Add(new SqlParameter("@maphucap",phucap.MaPhuCap));
+            paras.Add(new SqlParameter("@maphucap", phucap.MaPhuCap));
             paras.Add(new SqlParameter("@tenphucap", phucap.TenPhuCap));
             paras.Add(new SqlParameter("@sotienphucap", phucap.SoTienPhuCap));
             try
@@ -594,7 +595,7 @@ namespace DAL
         public int AddHinh(string hinh)
         {
             List<SqlParameter> paras = new List<SqlParameter>();
-            paras.Add(new SqlParameter("@hinh",hinh));
+            paras.Add(new SqlParameter("@hinh", hinh));
             try
             {
                 return p.ExecNonQuery("", CommandType.StoredProcedure, paras);
@@ -609,7 +610,7 @@ namespace DAL
         {
             List<SqlParameter> paras = new List<SqlParameter>();
             paras.Add(new SqlParameter("@tentaikhoan", taikhoan.MaTaiKhoan));
-            paras.Add(new SqlParameter("@matkhau",taikhoan.MatKhau));
+            paras.Add(new SqlParameter("@matkhau", taikhoan.MatKhau));
             paras.Add(new SqlParameter("@phanquyen", taikhoan.PhanQuyen));
             try
             {
@@ -696,13 +697,13 @@ namespace DAL
                 throw p;
             }
         }
-        public int UpdateGioLamViec(string maglv,TimeSpan giove,string maclv,DateTime dt)
+        public int UpdateGioLamViec(string maglv, TimeSpan giove, string maclv, DateTime dt)
         {
             List<SqlParameter> paras = new List<SqlParameter>();
             paras.Add(new SqlParameter("@magiolamviec", maglv));
-            paras.Add(new SqlParameter("@giove",giove));
-            paras.Add(new SqlParameter("@macalamviec",maclv));
-            paras.Add(new SqlParameter("@ngay",dt));
+            paras.Add(new SqlParameter("@giove", giove));
+            paras.Add(new SqlParameter("@macalamviec", maclv));
+            paras.Add(new SqlParameter("@ngay", dt));
             try
             {
                 return p.ExecNonQuery("updategiolamviec", CommandType.StoredProcedure, paras);
@@ -799,7 +800,7 @@ namespace DAL
         public int UpdateLuong(string macn)
         {
             List<SqlParameter> paras = new List<SqlParameter>();
-            paras.Add(new SqlParameter("@macn",macn));
+            paras.Add(new SqlParameter("@macn", macn));
             try
             {
                 return p.ExecNonQuery("", CommandType.StoredProcedure, paras);
@@ -878,7 +879,7 @@ namespace DAL
         public int DeleteChucVu(string macv)
         {
             List<SqlParameter> paras = new List<SqlParameter>();
-            paras.Add(new SqlParameter("@macv",macv));
+            paras.Add(new SqlParameter("@macv", macv));
             try
             {
                 return p.ExecNonQuery("deletechucvu", CommandType.StoredProcedure, paras);
@@ -903,11 +904,11 @@ namespace DAL
                 throw p;
             }
         }
-        public int DeleteGioLamViec(string maglv,DateTime ngay)
+        public int DeleteGioLamViec(string maglv, DateTime ngay)
         {
             List<SqlParameter> paras = new List<SqlParameter>();
-            paras.Add(new SqlParameter("@magiolamviec",maglv));
-            paras.Add(new SqlParameter("@ngaylamviec",ngay));
+            paras.Add(new SqlParameter("@magiolamviec", maglv));
+            paras.Add(new SqlParameter("@ngaylamviec", ngay));
             try
             {
                 return p.ExecNonQuery("", CommandType.StoredProcedure, paras);
@@ -929,7 +930,7 @@ namespace DAL
         public int DeleteHeSoLuong(string mahsl)
         {
             List<SqlParameter> paras = new List<SqlParameter>();
-            paras.Add(new SqlParameter("@mahsl",mahsl));
+            paras.Add(new SqlParameter("@mahsl", mahsl));
             try
             {
                 return p.ExecNonQuery("deletehesoluong", CommandType.StoredProcedure, paras);
@@ -949,7 +950,7 @@ namespace DAL
         public int DeleteHopDong(string mahd)
         {
             List<SqlParameter> paras = new List<SqlParameter>();
-            paras.Add(new SqlParameter("@mahopdong",mahd));
+            paras.Add(new SqlParameter("@mahopdong", mahd));
             try
             {
                 return p.ExecNonQuery("deletehopdong", CommandType.StoredProcedure, paras);
@@ -969,7 +970,7 @@ namespace DAL
         public int DeletePhuCap(string mapc)
         {
             List<SqlParameter> paras = new List<SqlParameter>();
-            paras.Add(new SqlParameter("@maphucap",mapc));
+            paras.Add(new SqlParameter("@maphucap", mapc));
             try
             {
                 return p.ExecNonQuery("deletephucap", CommandType.StoredProcedure, paras);
@@ -994,11 +995,11 @@ namespace DAL
                 throw p;
             }
         }
-        public int DeleteKyHopDong(string makhd,string macn)
+        public int DeleteKyHopDong(string makhd, string macn)
         {
             List<SqlParameter> paras = new List<SqlParameter>();
-            paras.Add(new SqlParameter("@mahd",makhd));
-            paras.Add(new SqlParameter("@macn",macn));
+            paras.Add(new SqlParameter("@mahd", makhd));
+            paras.Add(new SqlParameter("@macn", macn));
             try
             {
                 return p.ExecNonQuery("deletekyhopdong", CommandType.StoredProcedure, paras);

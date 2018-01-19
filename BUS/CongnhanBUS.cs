@@ -294,6 +294,18 @@ namespace BUS
                 throw p;
             }
         }
+        public List<HopDong> ViewHopDong(string sql)
+        {
+            try
+            {
+                return (new Congnhan().ViewHopDong(sql));
+            }
+            catch (Exception p)
+            {
+
+                throw p;
+            }
+        }
         public int AddHopDong(HopDong hd)
         {
             try
@@ -335,6 +347,19 @@ namespace BUS
             try
             {
                 return (new Congnhan().ViewChucVu(sql));
+            }
+            catch (Exception p)
+            {
+
+                throw p;
+            }
+        }
+
+        public List<CaLamViec> ViewCaLamViec(string sql)
+        {
+            try
+            {
+                return (new Congnhan().ViewCaLamViec(sql));
             }
             catch (Exception p)
             {

@@ -335,7 +335,7 @@
             this.label89 = new System.Windows.Forms.Label();
             this.label88 = new System.Windows.Forms.Label();
             this.panel37 = new System.Windows.Forms.Panel();
-            this.dgvCalv_CD = new System.Windows.Forms.DataGridView();
+            this.dgvCaLV = new System.Windows.Forms.DataGridView();
             this.panel36 = new System.Windows.Forms.Panel();
             this.btLoadCa = new System.Windows.Forms.Button();
             this.tabPage13 = new System.Windows.Forms.TabPage();
@@ -436,7 +436,7 @@
             this.tabPage9.SuspendLayout();
             this.panel38.SuspendLayout();
             this.panel37.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvCalv_CD)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvCaLV)).BeginInit();
             this.panel36.SuspendLayout();
             this.tabPage13.SuspendLayout();
             this.panel23.SuspendLayout();
@@ -708,7 +708,7 @@
             this.label19.Name = "label19";
             this.label19.Size = new System.Drawing.Size(88, 13);
             this.label19.TabIndex = 8;
-            this.label19.Text = "Ma He So Luong";
+            this.label19.Text = "Mã Hệ Số Lương";
             // 
             // textBox58
             // 
@@ -782,7 +782,7 @@
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(51, 13);
             this.label5.TabIndex = 5;
-            this.label5.Text = "Ton Giao";
+            this.label5.Text = "Tôn Giáo";
             // 
             // txttongiao
             // 
@@ -1014,9 +1014,9 @@
             this.label17.AutoSize = true;
             this.label17.Location = new System.Drawing.Point(291, 134);
             this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(98, 13);
+            this.label17.Size = new System.Drawing.Size(91, 13);
             this.label17.TabIndex = 6;
-            this.label17.Text = "So Dien Thoai Nha";
+            this.label17.Text = "Số điện thoại nhà";
             // 
             // txtNoiOHien
             // 
@@ -1032,7 +1032,7 @@
             this.label15.Name = "label15";
             this.label15.Size = new System.Drawing.Size(81, 13);
             this.label15.TabIndex = 4;
-            this.label15.Text = "Noi O Hien Nay";
+            this.label15.Text = "Nơi Ở Hiện Nay";
             // 
             // cbChucvu
             // 
@@ -1151,7 +1151,7 @@
             this.label39.Name = "label39";
             this.label39.Size = new System.Drawing.Size(117, 13);
             this.label39.TabIndex = 0;
-            this.label39.Text = "Số Điện Thoại Di Dong";
+            this.label39.Text = "Số Điện Thoại Di Động";
             // 
             // label40
             // 
@@ -3476,20 +3476,21 @@
             // 
             // panel37
             // 
-            this.panel37.Controls.Add(this.dgvCalv_CD);
+            this.panel37.Controls.Add(this.dgvCaLV);
             this.panel37.Location = new System.Drawing.Point(200, 239);
             this.panel37.Name = "panel37";
             this.panel37.Size = new System.Drawing.Size(396, 255);
             this.panel37.TabIndex = 6;
             // 
-            // dgvCalv_CD
+            // dgvCaLV
             // 
-            this.dgvCalv_CD.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvCalv_CD.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dgvCalv_CD.Location = new System.Drawing.Point(0, 0);
-            this.dgvCalv_CD.Name = "dgvCalv_CD";
-            this.dgvCalv_CD.Size = new System.Drawing.Size(396, 255);
-            this.dgvCalv_CD.TabIndex = 1;
+            this.dgvCaLV.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvCaLV.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgvCaLV.Location = new System.Drawing.Point(0, 0);
+            this.dgvCaLV.Name = "dgvCaLV";
+            this.dgvCaLV.Size = new System.Drawing.Size(396, 255);
+            this.dgvCaLV.TabIndex = 1;
+            this.dgvCaLV.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvCaLV_CellClick);
             // 
             // panel36
             // 
@@ -3509,6 +3510,7 @@
             this.btLoadCa.TabIndex = 23;
             this.btLoadCa.Text = "Hiển thị ca làm việc";
             this.btLoadCa.UseVisualStyleBackColor = true;
+            this.btLoadCa.Click += new System.EventHandler(this.btLoadCa_Click);
             // 
             // tabPage13
             // 
@@ -3802,7 +3804,7 @@
             this.panel38.ResumeLayout(false);
             this.panel38.PerformLayout();
             this.panel37.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dgvCalv_CD)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvCaLV)).EndInit();
             this.panel36.ResumeLayout(false);
             this.tabPage13.ResumeLayout(false);
             this.panel23.ResumeLayout(false);
@@ -4012,7 +4014,7 @@
         private System.Windows.Forms.Label label89;
         private System.Windows.Forms.Label label88;
         private System.Windows.Forms.Panel panel37;
-        private System.Windows.Forms.DataGridView dgvCalv_CD;
+        private System.Windows.Forms.DataGridView dgvCaLV;
         private System.Windows.Forms.Panel panel36;
         private System.Windows.Forms.Button btLoadCa;
         private System.Windows.Forms.ComboBox cbhonnhan;

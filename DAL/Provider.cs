@@ -24,7 +24,7 @@ namespace DAL
                 if (cn != null && cn.State != ConnectionState.Open)
                     cn.Open();
             }
-            catch(SqlException p)
+            catch (SqlException p)
             {
 
                 throw p;
@@ -43,7 +43,7 @@ namespace DAL
                 SqlCommand cmd = new SqlCommand(sql, cn);
                 return cmd.ExecuteReader();
             }
-            catch(SqlException p)
+            catch (SqlException p)
             {
                 throw p;
             }
