@@ -28,33 +28,77 @@ namespace ChamCong
         {
             cnb = new CongnhanBUS();
         }
-
-        private void btDangNhap_Click(object sender, EventArgs e)
+        public void KiemTraDangNhap()
         {
             try
             {
-                TaiKhoan tk = cnb.ViewTaiKhoan("SELECT *FROM TaiKhoan WHERE TenTaiKhoan='" + txtTK.Text + "'")[0];
-                if (txtMK.Text.Equals(tk.MatKhau))
+                if (!string.IsNullOrEmpty(txtTK.Text))
                 {
-                    QLCN = new Form1();
-                    QLCN.Show();
+                    if (!string.IsNullOrEmpty(txtMK.Text))
+                    {
+                        TaiKhoan tk = cnb.ViewTaiKhoan("SELECT *FROM TaiKhoan WHERE TenTaiKhoan='" + txtTK.Text + "'")[0];
+                        if (txtMK.Text.Equals(tk.MatKhau))
+                        {
+                            QLCN = new Form1();
+                            QLCN.Show();
+                            this.Hide();
+                        }
+                        else
+                        {
+                            label4.Text = "Sai Mật Khẩu";
+                            txtMK.Clear();
+                            txtMK.Focus();
+                        }
+                    }
+                    else
+                    {
+                        label4.Text = "Lỗi!! Vui lòng nhập mật khẩu";
+                        txtMK.Focus();
+                    }
                 }
+                else
+                {
+                    label4.Text = " Lỗi!! Vui lòng nhập tài khoản của bạn";
+                    txtTK.Focus();
+                    txtMK.Clear();
+                }
+
 
             }
             catch (Exception)
             {
-                MessageBox.Show("Username hoặc password lỗi");
+                label4.Text = "Lỗi!! Sai tài khoản hoặc mật khẩu";
+                txtTK.Clear();
+                txtMK.Clear();
+                txtTK.Focus();
+
             }
         }
 
-        private void chkPass_CheckedChanged(object sender, EventArgs e)
+        public void btDangNhap_Click(object sender, EventArgs e)
         {
+            KiemTraDangNhap();
+        }
 
-            if (chkPass.Checked)
+        private void btnThoat_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+
+        public void txtMK_KeyDown(object sender, KeyEventArgs e)
+        {
+             if (e.KeyCode == Keys.Enter)
+             {
+                 KiemTraDangNhap();
+             }
+        }
+
+        private void txtTK_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
             {
-                txtMK.UseSystemPasswordChar = false;
+                KiemTraDangNhap();
             }
-            else txtMK.UseSystemPasswordChar = true;
         }
     }
 }

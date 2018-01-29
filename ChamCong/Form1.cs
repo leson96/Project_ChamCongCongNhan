@@ -390,10 +390,10 @@ namespace ChamCong
                 dtNgayky_HD.Value = (DateTime)dgvHD.CurrentRow.Cells[3].Value;
                 txtDieukhoan_HD.Text = dgvHD.CurrentRow.Cells[4].Value.ToString();
             }
-            catch (Exception)
+            catch (Exception p)
             {
 
-                throw;
+                MessageBox.Show(p.ToString());
             }
 
         }
@@ -439,7 +439,7 @@ namespace ChamCong
         {
             if (txtMaHD_HD.Text == "" && txtMaCN_HD.Text == "")
             {
-                MessageBox.Show("Khong co du lieu");
+                MessageBox.Show("Không có dữ liệu");
                 return;
             }
             try
@@ -950,7 +950,7 @@ namespace ChamCong
             catch (Exception p)
             {
 
-                throw;
+                throw p;
             }
 
         }
@@ -1064,6 +1064,12 @@ namespace ChamCong
             }
 
         }
+
+        private void dgvLoadcn_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
 
     }
 }
