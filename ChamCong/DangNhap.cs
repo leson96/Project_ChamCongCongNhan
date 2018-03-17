@@ -1,15 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using System.Data.SqlClient;
-using System.Data;
-using System.Configuration;
 using BUS;
 using DTO;
 namespace ChamCong
@@ -39,6 +29,7 @@ namespace ChamCong
                         TaiKhoan tk = cnb.ViewTaiKhoan("SELECT *FROM TaiKhoan WHERE TenTaiKhoan='" + txtTK.Text + "'")[0];
                         if (txtMK.Text.Equals(tk.MatKhau))
                         {
+                            label4.Text = "Đăng nhập thành công";
                             QLCN = new Form1();
                             QLCN.Show();
                             this.Hide();
@@ -100,5 +91,15 @@ namespace ChamCong
                 KiemTraDangNhap();
             }
         }
+        public bool ktdangnhap(string user, string pass)
+        {
+            if (user == "admin" && pass == "admin")
+            {
+                return true;
+            }
+            else
+                return false;
+        }
     }
+
 }
