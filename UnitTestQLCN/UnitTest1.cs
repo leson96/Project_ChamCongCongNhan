@@ -9,10 +9,12 @@ namespace UnitTestQLCN
     [TestClass]
     public class UnitTest1
     {
+        private ChamCong.Form1 frm1;
         private ChamCong.DangNhap dn;
         [TestInitialize]
         public void setup()
         {
+            frm1=new Form1();
             dn = new DangNhap();
         }
         [TestMethod]
@@ -40,6 +42,12 @@ namespace UnitTestQLCN
         public void DangNhapBoTrongTKMK()
         {
             Assert.AreEqual(dn.ktdangnhap("", ""), false);
+        }
+
+        [TestMethod]
+        public void KTKH()
+        {
+            //Assert.AreEqual(frm1.kiemtraCN(), false);
         }
     }
 }

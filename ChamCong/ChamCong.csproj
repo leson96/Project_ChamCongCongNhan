@@ -142,9 +142,6 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="bin\Debug\Hinh\164644-200.png" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Resources\little-table-grid_318-25351.jpg" />
   </ItemGroup>
   <ItemGroup>
