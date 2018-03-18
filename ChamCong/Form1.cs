@@ -25,8 +25,7 @@ namespace ChamCong
             datagridView.Dock = DockStyle.Fill;
             panelDataGridView.Controls.Add(datagridView);
         }
-
-        private void btLoadCongnhan_Click(object sender, EventArgs e)
+        public void LoadCN()
         {
             try
             {
@@ -36,6 +35,11 @@ namespace ChamCong
             {
                 MessageBox.Show(p.ToString());
             }
+        }
+
+        private void btLoadCongnhan_Click(object sender, EventArgs e)
+        {
+            LoadCN();
         }
         private void Form1_Load(object sender, EventArgs e)
         {
@@ -170,12 +174,26 @@ namespace ChamCong
 
         private void btThem_CN_Click(object sender, EventArgs e)
         {
-            if (txtHo.Text == "" || txtTen.Text == "" || cbGioitinh.Text == "" || dtNgaysinh.Value == null || txtNoisinh.Text == "" || txtCmnd.Text == "" || txtDantoc.Text == "" || txttongiao.Text == "" || txtQuequan.Text == "" || txtSonha.Text == "" || txtNoiOHien.Text == "" || txtSDTN.Text == "" || txtSDT.Text == "" || txtEmail.Text == "" || cbhonnhan.Text == "" || dtNgay.Value == null || txtNoilamviec.Text == "" || txtTrinhdoVH.Text == "" || txtMaCN_CC.Text == "" || txtMahesoluong.Text == "" || txtPhuCap.Text == "" || txtTKnganhang.Text == "" || txtNoicap.Text == "" || dtNgaycap.Value == null || picCongnhan.ImageLocation == "" || txtQuoctich.Text == "" || textBox58.Text == "" || textBox1.Text == "")
+            if (txtHo.Text == "" || txtTen.Text == "" || cbGioitinh.Text == "" ||
+                dtNgaysinh.Value == null || txtNoisinh.Text == "" || txtCmnd.Text == "" ||
+                txtDantoc.Text == "" || txttongiao.Text == "" || txtQuequan.Text == "" ||
+                txtSonha.Text == "" || txtNoiOHien.Text == "" || txtSDTN.Text == "" || txtSDT.Text == "" ||
+                txtEmail.Text == "" || cbhonnhan.Text == "" || dtNgay.Value == null || txtNoilamviec.Text == "" ||
+                txtTrinhdoVH.Text == "" || txtMaCN_CC.Text == "" || txtMahesoluong.Text == "" || txtPhuCap.Text == "" ||
+                txtTKnganhang.Text == "" || txtNoicap.Text == "" || dtNgaycap.Value == null ||
+                picCongnhan.ImageLocation == "" || txtQuoctich.Text == "" || textBox58.Text == "" || textBox1.Text == "")
             {
                 MessageBox.Show("Khong co du lieu");
                 return;
             }
-            CongNhan cn = new CongNhan(txtMaCN_CN.Text, txtHo.Text, txtTen.Text, cbGioitinh.Text, dtNgaysinh.Value, txtNoisinh.Text, txtCmnd.Text, txtDantoc.Text, txttongiao.Text, txtQuequan.Text, txtSonha.Text, txtNoiOHien.Text, txtSDTN.Text, txtSDT.Text, txtEmail.Text, cbhonnhan.Text, dtNgay.Value, txtNoilamviec.Text, txtTrinhdoVH.Text, txtMaCN_CC.Text, txtMahesoluong.Text, txtPhuCap.Text, txtTKnganhang.Text, txtNoicap.Text, dtNgaycap.Value, picCongnhan.ImageLocation, "1", txtQuoctich.Text, textBox58.Text, textBox1.Text);
+            CongNhan cn = new CongNhan(txtMaCN_CN.Text, txtHo.Text, txtTen.Text,
+                cbGioitinh.Text, dtNgaysinh.Value, txtNoisinh.Text, txtCmnd.Text,
+                txtDantoc.Text, txttongiao.Text, txtQuequan.Text, txtSonha.Text,
+                txtNoiOHien.Text, txtSDTN.Text, txtSDT.Text, txtEmail.Text,
+                cbhonnhan.Text, dtNgay.Value, txtNoilamviec.Text, txtTrinhdoVH.Text,
+                txtMaCN_CC.Text, txtMahesoluong.Text, txtPhuCap.Text, txtTKnganhang.Text,
+                txtNoicap.Text, dtNgaycap.Value, picCongnhan.ImageLocation, "1", txtQuoctich.Text,
+                textBox58.Text, textBox1.Text);
             try
             {
                 cnb.AddCongNhan(cn);
@@ -191,13 +209,15 @@ namespace ChamCong
         {
             if (txtHo.Text == "" || txtTen.Text == "" || cbGioitinh.Text == "" || dtNgaysinh.Value == null || txtNoisinh.Text == "" || txtCmnd.Text == "" || txtDantoc.Text == "" || txttongiao.Text == "" || txtQuequan.Text == "" || txtSonha.Text == "" || txtNoiOHien.Text == "" || txtSDTN.Text == "" || txtSDT.Text == "" || txtEmail.Text == "" || cbhonnhan.Text == "" || dtNgay.Value == null || txtNoilamviec.Text == "" || txtTrinhdoVH.Text == "" || txtMaCN_CC.Text == "" || txtMahesoluong.Text == "" || txtPhuCap.Text == "" || txtTKnganhang.Text == "" || txtNoicap.Text == "" || dtNgaycap.Value == null || picCongnhan.ImageLocation == "" || txtQuoctich.Text == "" || textBox58.Text == "" || textBox1.Text == "")
             {
-                MessageBox.Show("Khong co du lieu");
+                MessageBox.Show("Không có dữ liệu", "Thông Báo");
                 return;
             }
             CongNhan cn = new CongNhan(txtMaCN_CN.Text, txtHo.Text, txtTen.Text, cbGioitinh.Text, dtNgaysinh.Value, txtNoisinh.Text, txtCmnd.Text, txtDantoc.Text, txttongiao.Text, txtQuequan.Text, txtSonha.Text, txtNoiOHien.Text, txtSDTN.Text, txtSDT.Text, txtEmail.Text, cbhonnhan.Text, dtNgay.Value, txtNoilamviec.Text, txtTrinhdoVH.Text, txtMaCN_CC.Text, txtMahesoluong.Text, txtPhuCap.Text, txtTKnganhang.Text, txtNoicap.Text, dtNgaycap.Value, picCongnhan.ImageLocation, "1", txtQuoctich.Text, textBox58.Text, textBox1.Text);
             try
             {
                 cnb.UpdateCongNhan(cn);
+                MessageBox.Show("Sửa thành công", "Thông Báo");
+                LoadCN();
             }
             catch (Exception p)
             {
@@ -212,11 +232,23 @@ namespace ChamCong
             {
                 if (txtMaCN_CN.Text == "")
                 {
-                    MessageBox.Show("Khong co du lieu");
+
+                    MessageBox.Show("Không có dữ liệu ", "Thông Báo");
                     return;
                 }
-                if (cnb.DeleteCongNhan(txtMaCN_CN.Text) != 0)
-                    MessageBox.Show("Delete cong nhan");
+                DialogResult dlr = MessageBox.Show("Bạn có chắc muốn xóa không ?? ", "Thông Báo", MessageBoxButtons.YesNo);
+                if (dlr == DialogResult.Yes)
+                {
+                    if (cnb.DeleteCongNhan(txtMaCN_CN.Text) != 0)
+                        MessageBox.Show("Xóa thành công", "Thông Báo");
+                    LoadCN();
+                }
+                else
+                {
+                    return;
+                }
+
+
             }
             catch (Exception p)
             {
@@ -247,15 +279,44 @@ namespace ChamCong
 
         private void btXoa_CC_Click(object sender, EventArgs e)
         {
+
+
+            //if (txtMaCN_CN.Text == "")
+            //{
+
+            //    MessageBox.Show("Không có dữ liệu ", "Thông Báo");
+            //    return;
+            //}
+            //DialogResult dlr = MessageBox.Show("Bạn có chắc muốn xóa không ?? ", "Thông Báo", MessageBoxButtons.YesNo);
+            //if (dlr == DialogResult.Yes)
+            //{
+            //    if (cnb.DeleteCongNhan(txtMaCN_CN.Text) != 0)
+            //        MessageBox.Show("Xóa thành công", "Thông Báo");
+            //    LoadCN();
+            //}
+            //else
+            //{
+            //    return;
+            //}
             if (txtMaCN_CC.Text == "")
             {
-                MessageBox.Show("Khong co du lieu");
+                MessageBox.Show("Không có dữ liệu ", "Thông Báo");
                 return;
             }
             try
             {
-                cnb.DeleteGioLamViec(txtMaCN_CC.Text, dtNgay.Value);
-                dgvCheck.DataSource = new CongnhanBUS().ViewGioLamViec("SELECT *FROM GioLamViec").ToList();
+                DialogResult dlr = MessageBox.Show("Bạn có chắc muốn xóa không ?? ", "Thông Báo", MessageBoxButtons.YesNo);
+                if (dlr == DialogResult.Yes)
+                {
+                    cnb.DeleteGioLamViec(txtMaCN_CC.Text, dtNgay.Value);
+                    dgvCheck.DataSource = new CongnhanBUS().ViewGioLamViec("SELECT *FROM GioLamViec").ToList();
+                    MessageBox.Show("Xóa thành công", "Thông Báo");
+
+                }
+                else
+                {
+                    return;
+                }
             }
             catch (Exception p)
             {
@@ -390,10 +451,10 @@ namespace ChamCong
                 dtNgayky_HD.Value = (DateTime)dgvHD.CurrentRow.Cells[3].Value;
                 txtDieukhoan_HD.Text = dgvHD.CurrentRow.Cells[4].Value.ToString();
             }
-            catch (Exception)
+            catch (Exception p)
             {
 
-                throw;
+                MessageBox.Show(p.ToString());
             }
 
         }
@@ -439,7 +500,7 @@ namespace ChamCong
         {
             if (txtMaHD_HD.Text == "" && txtMaCN_HD.Text == "")
             {
-                MessageBox.Show("Khong co du lieu");
+                MessageBox.Show("Không có dữ liệu");
                 return;
             }
             try
@@ -950,7 +1011,7 @@ namespace ChamCong
             catch (Exception p)
             {
 
-                throw;
+                throw p;
             }
 
         }
@@ -1064,6 +1125,41 @@ namespace ChamCong
             }
 
         }
+
+        private void dgvLoadcn_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        public bool kiemtraCN(string MaNV, string Ho, string Ten, string GioiTinh, string NgaySinh,
+                            string NoiSinh, string CMND, string DanToc, string TonGiao,
+                            string QueQuan, string DCThuongTru, string NoiOHienNay,
+                            string DienThoaiNha, string DienThoaiDD, string Email, string TTrangHonNhan,
+                            string NgayTuyenDung, string NoiLamViec, string TrinhDoVanHoa, string MaHSL,
+                            string MaCV, string MaPhuCap, string TaiKhoanNganHang,
+                            string NgayCapCMND, string NoiCapCMND, string Hinh,
+                            string TinhTrangLamViec, string QuocTich, string MaBHYT, string MaBHXH)
+        {
+            if (MaNV.Length == 0 || Ho.Length == 0 || Ten.Length == 0 || GioiTinh.Length == 0 || NgaySinh.Length == 0 ||
+                 NoiSinh.Length == 0 || CMND.Length == 0 || DanToc.Length == 0 || TonGiao.Length == 0 ||
+                 
+				 
+				 QueQuan.Length == 0 || DCThuongTru.Length == 0 || NoiOHienNay.Length == 0 ||
+                 DienThoaiNha.Length == 0 || DienThoaiDD.Length == 0 || Email.Length == 0 || TTrangHonNhan.Length == 0 ||
+                 NgayTuyenDung.Length == 0 || NoiLamViec.Length == 0 || TrinhDoVanHoa.Length == 0 || MaHSL.Length == 0 ||
+                 MaCV.Length == 0 || MaPhuCap.Length == 0 || TaiKhoanNganHang.Length == 0 ||
+                 NgayCapCMND.Length == 0 || NoiCapCMND.Length == 0 || Hinh.Length == 0 ||
+                 TinhTrangLamViec.Length == 0 || QuocTich.Length == 0 || MaBHYT.Length == 0 || MaBHXH.Length == 0)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+
+        }
+
 
     }
 }
