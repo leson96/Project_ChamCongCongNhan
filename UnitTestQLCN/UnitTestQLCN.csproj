@@ -58,9 +58,21 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\BUS\BUS.csproj">
+      <Project>{ed2dc391-8ed7-43ff-8fa7-662f31e6d6a9}</Project>
+      <Name>BUS</Name>
+    </ProjectReference>
     <ProjectReference Include="..\ChamCong\ChamCong.csproj">
       <Project>{3983618a-1b29-45c2-87fa-1d93e4c4f841}</Project>
       <Name>ChamCong</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DAL\DAL.csproj">
+      <Project>{0dad2a6a-54f5-4579-8d0d-6e85dc4978f2}</Project>
+      <Name>DAL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DTO\DTO.csproj">
+      <Project>{482a0f63-903b-457d-9875-4071a36b4198}</Project>
+      <Name>DTO</Name>
     </ProjectReference>
   </ItemGroup>
   <Choose>

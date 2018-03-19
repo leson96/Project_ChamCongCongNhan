@@ -11,12 +11,15 @@ namespace ChamCong
         CongnhanBUS cnb;
         public DangNhap()
         {
+
             InitializeComponent();
+
         }
 
         private void DangNhap_Load(object sender, EventArgs e)
         {
             cnb = new CongnhanBUS();
+            //cnb;
         }
         public void KiemTraDangNhap()
         {
@@ -78,10 +81,10 @@ namespace ChamCong
 
         public void txtMK_KeyDown(object sender, KeyEventArgs e)
         {
-             if (e.KeyCode == Keys.Enter)
-             {
-                 KiemTraDangNhap();
-             }
+            if (e.KeyCode == Keys.Enter)
+            {
+                KiemTraDangNhap();
+            }
         }
 
         private void txtTK_KeyDown(object sender, KeyEventArgs e)
@@ -100,6 +103,42 @@ namespace ChamCong
             else
                 return false;
         }
-    }
+        #region TESTCASE
+        public int _KiemTraDangNhapTEST(string TK, string MK)
+        {
+            if (string.IsNullOrEmpty(TK) && string.IsNullOrEmpty(MK))
+            {
+                //chua nhap tai khoan va mat khau
+                return 0;
+            }
+            else if (!string.IsNullOrEmpty(TK))
+            {
+                if (!string.IsNullOrEmpty(MK))
+                {
 
+                    if (MK.Equals("admin") && TK.Equals("admin"))
+                    {
+                        //Đăng nhập thành công";
+                        return 1;
+                    }
+                    else if (TK.Equals("admin") && MK != "admin") 
+                        //Sai Mật Khẩu
+                        return 2;
+                    else
+                        // Nhap sai ca 2;
+                        return 3;
+                }
+                //Lỗi!! Vui lòng nhập mật khẩu
+                else
+                    return 4;
+            }
+            // Lỗi!! Vui lòng nhập tài khoản";
+            else
+                return 5;
+        }
+        
+    }
+   
+        #endregion
 }
+

@@ -1142,24 +1142,20 @@ namespace ChamCong
         {
             if (MaNV.Length == 0 || Ho.Length == 0 || Ten.Length == 0 || GioiTinh.Length == 0 || NgaySinh.Length == 0 ||
                  NoiSinh.Length == 0 || CMND.Length == 0 || DanToc.Length == 0 || TonGiao.Length == 0 ||
-                 
-				 
 				 QueQuan.Length == 0 || DCThuongTru.Length == 0 || NoiOHienNay.Length == 0 ||
                  DienThoaiNha.Length == 0 || DienThoaiDD.Length == 0 || Email.Length == 0 || TTrangHonNhan.Length == 0 ||
                  NgayTuyenDung.Length == 0 || NoiLamViec.Length == 0 || TrinhDoVanHoa.Length == 0 || MaHSL.Length == 0 ||
                  MaCV.Length == 0 || MaPhuCap.Length == 0 || TaiKhoanNganHang.Length == 0 ||
                  NgayCapCMND.Length == 0 || NoiCapCMND.Length == 0 || Hinh.Length == 0 ||
-                 TinhTrangLamViec.Length == 0 || QuocTich.Length == 0 || MaBHYT.Length == 0 || MaBHXH.Length == 0)
-            {
-                return true;
-            }
-            else
+                 TinhTrangLamViec.Length == 0 || QuocTich.Length == 0 || MaBHYT.Length== 0 || MaBHXH.Length == 0)
             {
                 return false;
             }
+            else
+            {
+                return true;
+            }
 
         }
-
-
     }
 }
