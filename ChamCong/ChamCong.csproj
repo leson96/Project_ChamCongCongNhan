@@ -208,6 +208,21 @@
       <Name>DTO</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\efresh-4.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\arrow-refresh-4-icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\refresh-round-symbol.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\refresh-round-symbol %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\refresh-round-symbol_64.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

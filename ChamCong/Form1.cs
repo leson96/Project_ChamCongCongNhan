@@ -25,6 +25,14 @@ namespace ChamCong
             datagridView.Dock = DockStyle.Fill;
             panelDataGridView.Controls.Add(datagridView);
         }
+        private void Form1_Load(object sender, EventArgs e)
+        {
+            cnb = new CongnhanBUS();
+        }
+        private void btLoadCongnhan_Click(object sender, EventArgs e)
+        {
+            LoadCN();
+        }
         public void LoadCN()
         {
             try
@@ -36,22 +44,17 @@ namespace ChamCong
                 MessageBox.Show(p.ToString());
             }
         }
-        private void btLoadCongnhan_Click(object sender, EventArgs e)
+        private void btnf5_Click(object sender, EventArgs e)
         {
             LoadCN();
         }
-        private void Form1_Load(object sender, EventArgs e)
-        {
-            cnb = new CongnhanBUS();
-        }
-
         private void dgvLoadcn_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             try
             {
                 txtMaCN_CN.Text = dgvLoadcn.CurrentRow.Cells[0].Value.ToString();
-                txtTen.Text = dgvLoadcn.CurrentRow.Cells[1].Value.ToString();
-                txtHo.Text = dgvLoadcn.CurrentRow.Cells[2].Value.ToString();
+                txtTen.Text = dgvLoadcn.CurrentRow.Cells[2].Value.ToString();
+                txtHo.Text = dgvLoadcn.CurrentRow.Cells[1].Value.ToString();
                 dtTuyendung.Value = (DateTime)dgvLoadcn.CurrentRow.Cells[16].Value;
                 cbChucvu.Text = dgvLoadcn.CurrentRow.Cells[20].Value.ToString();
                 txtSDT.Text = dgvLoadcn.CurrentRow.Cells[13].Value.ToString();
@@ -493,19 +496,41 @@ namespace ChamCong
             try
             {
 
-                if (txtMaHD_tk.Text == "" && txtMaCN_tkHD.Text != "")
+                if (txtMaHD_TK.Text == "" && txtMaCN_tkHD.Text == "")
                 {
-                    dgvHD.DataSource = cnb.ViewKyHopDong("SELECT KyHopDong.MaHD,KyHopDong.TuNgay,KyHopDong.DenNgay,Kyhopdong.NgayKyHD,KyHopDong.DieuKhoan,KyHopDong.MaNV,HopDong.LoaiHopDong,HopDong.KyHan,CongNhan.Ten FROM KyHopDong,HopDong,CongNhan WHERE KyHopDong.MaHD=HopDong.MaHD AND KyHopDong.MaNV=CongNhan.MaNV AND KyHopDong.MaHD='" + txtMaCN_tkHD.Text + "'").ToList();
-                }
-                if (txtMaHD_tk.Text != "" && txtMaCN_tkHD.Text == "")
-                {
-                    dgvHD.DataSource = cnb.ViewKyHopDong("SELECT KyHopDong.MaHD,KyHopDong.TuNgay,KyHopDong.DenNgay,Kyhopdong.NgayKyHD,KyHopDong.DieuKhoan,KyHopDong.MaNV,HopDong.LoaiHopDong,HopDong.KyHan,CongNhan.Ten FROM KyHopDong,HopDong,CongNhan WHERE KyHopDong.MaHD=HopDong.MaHD AND KyHopDong.MaNV=CongNhan.MaNV AND CongNhan.MaNV='" + txtMaCN_tkHD.Text + "'").ToList();
-                }
-                if (txtMaHD_tk.Text == "" && txtMaCN_tkHD.Text == "")
-                {
-                    MessageBox.Show("Không có dữ liệu để tìm hợp đồng", "Thông báo");
+                    MessageBox.Show("Không có dữ liệu để tìm kiếm hợp đồng", "Thông báo");
                     return;
                 }
+                if (txtMaHD_TK.Text != "" && txtMaCN_tkHD.Text == "")
+                {
+                    MessageBox.Show("Bạn chưa mã nhân viên", "Thông báo");
+                    txtMaCN_tkHD.Focus();
+                    return;
+                }
+                if (txtMaHD_TK.Text == "" && txtMaCN_tkHD.Text != "")
+                {
+                    MessageBox.Show("Bạn chưa mã hợp đồng", "Thông báo");
+                    txtMaHD_TK.Focus();
+                    return;
+                }
+                if (txtMaHD_TK.Text != "" && txtMaCN_tkHD.Text != "")
+                {
+                    dgvHD.DataSource = cnb.ViewKyHopDong( " SELECT " 
+                                                    + " KyHopDong.MaHD,KyHopDong.TuNgay,KyHopDong.DenNgay,"
+                                                    + " Kyhopdong.NgayKyHD,KyHopDong.DieuKhoan,KyHopDong.MaNV,"
+                                                    + " HopDong.LoaiHopDong,HopDong.KyHan,CongNhan.Ten "
+                                                    + " FROM "
+                                                    + " KyHopDong,HopDong,CongNhan "
+                                                    + " WHERE "
+                                                    + " KyHopDong.MaHD=HopDong.MaHD "
+                                                    + " AND "
+                                                    + " KyHopDong.MaNV=CongNhan.MaNV "
+                                                    + " AND "
+                                                    + " (CongNhan.MaNV='" + txtMaCN_tkHD.Text + "' and KyHopDong.MaHD='" + txtMaHD_TK.Text + "')").ToList(); ;
+                        
+                        //"SELECT KyHopDong.MaHD,KyHopDong.TuNgay,KyHopDong.DenNgay,Kyhopdong.NgayKyHD,KyHopDong.DieuKhoan,KyHopDong.MaNV,HopDong.LoaiHopDong,HopDong.KyHan,CongNhan.Ten FROM KyHopDong,HopDong,CongNhan WHERE KyHopDong.MaHD=HopDong.MaHD AND KyHopDong.MaNV=CongNhan.MaNV AND KyHopDong.MaHD='" + txtMaHD_TK.Text + "'")
+                }
+
             }
             catch (Exception p)
             {
@@ -1166,19 +1191,27 @@ namespace ChamCong
 
         public void btTimtenCN_Click(object sender, EventArgs e)
         {
-            if (txtTenCN.Text == "")
-            {
-                MessageBox.Show("Không có dữ liệu để tìm", "Thông báo");
-                return;
-            }
             try
             {
-                dgvLoadcn.DataSource = cnb.ViewCongNhan("SELECT *FROM CongNhan,ChucVu WHERE CongNhan.MaCV=ChucVu.MaCV AND (Ten='" + txtTenCN.Text + "' OR MaNV='" + txtTenCN.Text + "')").ToList();
+                if (txtTenCN.Text == "")
+                {
+                    MessageBox.Show("Không có dữ liệu để tìm", "Thông báo");
+                    return;
+                }
+                if (txtTenCN.Text != "")
+                {
+                    dgvLoadcn.DataSource = cnb.ViewCongNhan("SELECT *FROM CongNhan,ChucVu WHERE CongNhan.MaCV=ChucVu.MaCV AND (Ten='" + txtTenCN.Text + "' OR MaNV='" + txtTenCN.Text + "')").ToList();
+                }
             }
             catch (Exception p)
             {
                 MessageBox.Show(p.ToString());
             }
+
+            //try
+            //{
+
+            //}
         }
         public bool kttimkiem(string user)
         {
@@ -1314,12 +1347,7 @@ namespace ChamCong
             }
         }
 
-        public bool TimKiemHopDong(string MaHD, string MaCN)
-        {
-            if (MaHD == "HD01" && MaCN == "CN01")
-                return true;
-            return false;
-        }
+
 
         private void btnXoa_ChamCong_Click(object sender, EventArgs e)
         {
@@ -1368,5 +1396,18 @@ namespace ChamCong
             }
 
         }
+
+        //private void btnf5_Click(object sender, EventArgs e)
+        //{
+
+        //}
+        public bool TimKiemHopDong(string MaHD, string MaCN)
+        {
+            if (MaHD == "HD01" && MaCN == "CN001")
+                return true;
+            return false;
+        }
+
+
     }
 }
