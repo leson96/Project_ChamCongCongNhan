@@ -381,14 +381,15 @@ namespace ChamCong
             try
             {
                 txtMaHD_HD.Text = dgvHD.CurrentRow.Cells[0].Value.ToString();
-                txtMaCN_HD.Text = dgvHD.CurrentRow.Cells[5].Value.ToString();
-                txtTenHD_HD.Text = dgvHD.CurrentRow.Cells[6].Value.ToString();
-                txtTenCN_HD.Text = dgvHD.CurrentRow.Cells[8].Value.ToString();
-                txtKyhan_HD.Text = dgvHD.CurrentRow.Cells[7].Value.ToString();
-                dtTungay_HD.Value = (DateTime)dgvHD.CurrentRow.Cells[1].Value;
-                dtDenngay_HD.Value = (DateTime)dgvHD.CurrentRow.Cells[2].Value;
-                dtNgayky_HD.Value = (DateTime)dgvHD.CurrentRow.Cells[3].Value;
-                txtDieukhoan_HD.Text = dgvHD.CurrentRow.Cells[4].Value.ToString();
+                txtMaCN_HD.Text = dgvHD.CurrentRow.Cells[3].Value.ToString();
+                //txtTenHD_HD.Text = dgvHD.CurrentRow.Cells[4].Value.ToString();
+                txtTenCN_HD.Text = dgvHD.CurrentRow.Cells[4].Value.ToString();
+                txtKyhan_HD.Text = dgvHD.CurrentRow.Cells[2].Value.ToString();
+                dtTungay_HD.Value = (DateTime)dgvHD.CurrentRow.Cells[5].Value;
+                dtDenngay_HD.Value = (DateTime)dgvHD.CurrentRow.Cells[6].Value;
+                dtNgayky_HD.Value = (DateTime)dgvHD.CurrentRow.Cells[7].Value;
+                txtDieukhoan_HD.Text = dgvHD.CurrentRow.Cells[8].Value.ToString();
+                //txtDieukhoan_HD.Text = dgvHD.CurrentRow.Cells[4].Value.ToString();
             }
             catch (Exception p)
             {

@@ -2187,6 +2187,7 @@
             this.dgvHD.Size = new System.Drawing.Size(708, 529);
             this.dgvHD.TabIndex = 10;
             this.dgvHD.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvHD_CellClick);
+            //this.dgvHD.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvHD_CellContentClick);
             // 
             // panel43
             // 
@@ -2894,7 +2895,7 @@
             this.tabPage8.Location = new System.Drawing.Point(4, 24);
             this.tabPage8.Name = "tabPage8";
             this.tabPage8.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage8.Size = new System.Drawing.Size(1246, 641);
+            this.tabPage8.Size = new System.Drawing.Size(1246, 639);
             this.tabPage8.TabIndex = 1;
             this.tabPage8.Text = "Phụ cấp";
             this.tabPage8.UseVisualStyleBackColor = true;
@@ -3047,7 +3048,7 @@
             this.tabPage10.Controls.Add(this.panel28);
             this.tabPage10.Location = new System.Drawing.Point(4, 24);
             this.tabPage10.Name = "tabPage10";
-            this.tabPage10.Size = new System.Drawing.Size(1246, 641);
+            this.tabPage10.Size = new System.Drawing.Size(1246, 639);
             this.tabPage10.TabIndex = 3;
             this.tabPage10.Text = "Hợp đồng";
             this.tabPage10.UseVisualStyleBackColor = true;
@@ -3200,7 +3201,7 @@
             this.tabPage11.Controls.Add(this.panel33);
             this.tabPage11.Location = new System.Drawing.Point(4, 24);
             this.tabPage11.Name = "tabPage11";
-            this.tabPage11.Size = new System.Drawing.Size(1246, 641);
+            this.tabPage11.Size = new System.Drawing.Size(1246, 639);
             this.tabPage11.TabIndex = 4;
             this.tabPage11.Text = "Chức Vụ";
             this.tabPage11.UseVisualStyleBackColor = true;
@@ -3348,7 +3349,7 @@
             this.tabPage9.Controls.Add(this.panel36);
             this.tabPage9.Location = new System.Drawing.Point(4, 24);
             this.tabPage9.Name = "tabPage9";
-            this.tabPage9.Size = new System.Drawing.Size(1246, 641);
+            this.tabPage9.Size = new System.Drawing.Size(1246, 639);
             this.tabPage9.TabIndex = 5;
             this.tabPage9.Text = "Ca làm việc";
             this.tabPage9.UseVisualStyleBackColor = true;
@@ -3531,7 +3532,7 @@
             this.tabPage13.Controls.Add(this.panel2);
             this.tabPage13.Location = new System.Drawing.Point(4, 24);
             this.tabPage13.Name = "tabPage13";
-            this.tabPage13.Size = new System.Drawing.Size(1246, 641);
+            this.tabPage13.Size = new System.Drawing.Size(1246, 639);
             this.tabPage13.TabIndex = 6;
             this.tabPage13.Text = "Hệ số lương";
             this.tabPage13.UseVisualStyleBackColor = true;
