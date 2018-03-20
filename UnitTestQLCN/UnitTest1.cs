@@ -75,7 +75,7 @@ namespace UnitTestQLCN
             Assert.AreEqual(df.kthopdong("", "CN002"), false);
         }
       
-        
+        [TestMethod]
 
     }
 }
