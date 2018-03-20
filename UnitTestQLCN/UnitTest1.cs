@@ -11,8 +11,8 @@ namespace UnitTestQLCN
     [TestClass]
     public class UnitTest1
     {
-        private ChamCong.Form1 frm1;
         private ChamCong.DangNhap dn;
+        private ChamCong.Form1 df;
 
         [TestInitialize]
         public void setup()
@@ -20,6 +20,14 @@ namespace UnitTestQLCN
            
             dn = new DangNhap();
             frm1 = new Form1();
+			df = new Form1();
+   
+        [TestInitialize]
+        public void setup()
+        {
+            dn = new DangNhap();
+            
+
         }
 
         [TestMethod]
@@ -32,6 +40,7 @@ namespace UnitTestQLCN
         public void LoginFail_()
         {
             Assert.AreEqual(dn._KiemTraDangNhapTEST("leson", "leson"), 3);
+            Assert.AreEqual(dn.ktdangnhap("datdaigia", "sonmatcho"), false);
         }
         [TestMethod]
         public void LoginWithoutUsername_()
@@ -48,7 +57,6 @@ namespace UnitTestQLCN
         {
             Assert.AreEqual(dn._KiemTraDangNhapTEST("", ""), 0);
         }
-
         [TestMethod]
         public void LoginUsernameCorrect_PassIncorrect_()
         {
@@ -69,6 +77,40 @@ namespace UnitTestQLCN
         public void KiemTra_NhapThieu()
         {
             Assert.AreEqual(frm1.kiemtraCN("CN01", "", null, "Nam", "30/10/1996", "TPHCM", "012345", "Kinh", "Khong", "Long An", "Long An", "BenLuc", "122455", "1222", "1@gmail.com", "Khong", "12/2017", "Quan12", "DaiHoc", "HSL1", "CV01", "MPC1", "TKNG", "2017", "BenLuc", "PIC", "DangLam", "VN", "BHYT1", "BHXH"), false);
+        public void KiemTraTimKiemTC()
+        {
+            Assert.AreEqual(df.kttimkiem("CN002"), true);
         }
+        [TestMethod]
+        public void KiemTraTKThatBai()
+        {
+            Assert.AreEqual(df.kttimkiem("12345"), false);
+        }
+        [TestMethod]
+        public void KiemTraRong()
+        {
+            Assert.AreEqual(df.kttimkiem(""), true);
+        }
+        [TestMethod]
+        public void TimHDThanhcong()
+        {
+            Assert.AreEqual(df.kthopdong("HD01", "CN002"), true);
+        }
+        public void TimHDthatbai()
+        {
+            Assert.AreEqual(df.kthopdong("", ""), false);
+        }
+        [TestMethod]
+         public void BoTrongMaHD()
+        {
+            Assert.AreEqual(df.kthopdong("", "CN002"), false);
+        }
+      
+        [TestMethod]
+        public void KTTimKiemHopDong()
+        {
+            Assert.AreEqual(df.TimKiemHopDong("HD01", "CN01"), true);
+        }
+
     }
 }
