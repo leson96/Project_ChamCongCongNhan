@@ -12,21 +12,15 @@ namespace UnitTestQLCN
     public class UnitTest1
     {
         private ChamCong.DangNhap dn;
-        private ChamCong.Form1 df;
+        private ChamCong.Form1 df, frm1;
 
         [TestInitialize]
         public void setup()
         {
-           
+
             dn = new DangNhap();
             frm1 = new Form1();
-			df = new Form1();
-   
-        [TestInitialize]
-        public void setup()
-        {
-            dn = new DangNhap();
-            
+            df = new Form1();
 
         }
 
@@ -40,7 +34,6 @@ namespace UnitTestQLCN
         public void LoginFail_()
         {
             Assert.AreEqual(dn._KiemTraDangNhapTEST("leson", "leson"), 3);
-            Assert.AreEqual(dn.ktdangnhap("datdaigia", "sonmatcho"), false);
         }
         [TestMethod]
         public void LoginWithoutUsername_()
@@ -62,21 +55,24 @@ namespace UnitTestQLCN
         {
             Assert.AreEqual(dn._KiemTraDangNhapTEST("admin", "1111"), 2);
         }
-        
+
         [TestMethod]
         public void KiemTra_NhapKHRong()
         {
-            Assert.AreEqual(frm1.kiemtraCN("", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", ""), false);
+            Assert.AreEqual(frm1.KiemTraCN("", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", ""), false);
         }
         [TestMethod]
         public void KiemTra_NhapDayDu()
         {
-            Assert.AreEqual(frm1.kiemtraCN("CN01", "Le", "Son", "Nam", "30/10/1996", "TPHCM", "012345", "Kinh", "Khong", "Long An", "Long An", "BenLuc", "122455", "1222", "1@gmail.com", "Khong", "12/2017", "Quan12", "DaiHoc", "HSL1", "CV01", "MPC1", "TKNG", "2017", "BenLuc", "PIC", "DangLam", "VN", "BHYT1", "BHXH"), true);
+            Assert.AreEqual(frm1.KiemTraCN("CN01", "Le", "Son", "Nam", "30/10/1996", "TPHCM", "012345", "Kinh", "Khong", "Long An", "Long An", "BenLuc", "122455", "1222", "1@gmail.com", "Khong", "12/2017", "Quan12", "DaiHoc", "HSL1", "CV01", "MPC1", "TKNG", "2017", "BenLuc", "PIC", "DangLam", "VN", "BHYT1", "BHXH"), true);
         }
-         [TestMethod]
+        [TestMethod]
         public void KiemTra_NhapThieu()
         {
-            Assert.AreEqual(frm1.kiemtraCN("CN01", "", null, "Nam", "30/10/1996", "TPHCM", "012345", "Kinh", "Khong", "Long An", "Long An", "BenLuc", "122455", "1222", "1@gmail.com", "Khong", "12/2017", "Quan12", "DaiHoc", "HSL1", "CV01", "MPC1", "TKNG", "2017", "BenLuc", "PIC", "DangLam", "VN", "BHYT1", "BHXH"), false);
+            Assert.AreEqual(frm1.KiemTraCN("CN01", "", null, "Nam", "30/10/1996", "TPHCM", "012345", "Kinh", "Khong", "Long An", "Long An", "BenLuc", "122455", "1222", "1@gmail.com", "Khong", "12/2017", "Quan12", "DaiHoc", "HSL1", "CV01", "MPC1", "TKNG", "2017", "BenLuc", "PIC", "DangLam", "VN", "BHYT1", "BHXH"), false);
+
+        }
+        [TestMethod]
         public void KiemTraTimKiemTC()
         {
             Assert.AreEqual(df.kttimkiem("CN002"), true);
@@ -101,16 +97,9 @@ namespace UnitTestQLCN
             Assert.AreEqual(df.kthopdong("", ""), false);
         }
         [TestMethod]
-         public void BoTrongMaHD()
+        public void BoTrongMaHD()
         {
             Assert.AreEqual(df.kthopdong("", "CN002"), false);
         }
-      
-        [TestMethod]
-        public void KTTimKiemHopDong()
-        {
-            Assert.AreEqual(df.TimKiemHopDong("HD01", "CN01"), true);
-        }
-
     }
 }
