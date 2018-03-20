@@ -476,6 +476,15 @@ namespace ChamCong
                 MessageBox.Show(p.ToString());
             }
         }
+        public bool kthopdong(string mahd, string macn)
+        {
+            if (mahd == "HD01" && macn == "CN002")
+            {
+                return true;
+            }
+            else
+                return false;
+        }
 
         private void btLoadTK_Click(object sender, EventArgs e)
         {
@@ -971,6 +980,15 @@ namespace ChamCong
                 MessageBox.Show(p.ToString());
             }
         }
+        public bool kttimkiem(string user)
+        {
+            if (user == "CN002")
+            {
+                return true;
+            }
+            else
+                return false;
+        }
 
         private void dgvCheck_CellClick(object sender, DataGridViewCellEventArgs e)
         {
@@ -1069,6 +1087,12 @@ namespace ChamCong
         {
 
         }
+
+        private void txtMaCN_tkCC_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+       
 
 
     }

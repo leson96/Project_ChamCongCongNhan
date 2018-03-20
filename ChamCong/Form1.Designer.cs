@@ -107,6 +107,7 @@
             this.label43 = new System.Windows.Forms.Label();
             this.label44 = new System.Windows.Forms.Label();
             this.panelDataGridView = new System.Windows.Forms.Panel();
+            this.dgvLoadcn = new System.Windows.Forms.DataGridView();
             this.tabPage6 = new System.Windows.Forms.TabPage();
             this.panel14 = new System.Windows.Forms.Panel();
             this.btXoa_CC = new System.Windows.Forms.Button();
@@ -354,7 +355,6 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.btHSL = new System.Windows.Forms.Button();
             this.panelEnd = new System.Windows.Forms.Panel();
-            this.dgvLoadcn = new System.Windows.Forms.DataGridView();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.panelTop.SuspendLayout();
@@ -368,6 +368,7 @@
             this.groupBox4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picCongnhan)).BeginInit();
             this.panelDataGridView.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvLoadcn)).BeginInit();
             this.tabPage6.SuspendLayout();
             this.panel14.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -442,7 +443,6 @@
             this.panel30.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvHSL)).BeginInit();
             this.panel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvLoadcn)).BeginInit();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -1212,6 +1212,17 @@
             this.panelDataGridView.Size = new System.Drawing.Size(609, 547);
             this.panelDataGridView.TabIndex = 0;
             // 
+            // dgvLoadcn
+            // 
+            this.dgvLoadcn.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvLoadcn.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgvLoadcn.Location = new System.Drawing.Point(0, 0);
+            this.dgvLoadcn.Name = "dgvLoadcn";
+            this.dgvLoadcn.Size = new System.Drawing.Size(609, 547);
+            this.dgvLoadcn.TabIndex = 0;
+            this.dgvLoadcn.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvLoadcn_CellClick);
+            this.dgvLoadcn.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvLoadcn_CellContentClick);
+            // 
             // tabPage6
             // 
             this.tabPage6.Controls.Add(this.panel14);
@@ -1486,6 +1497,7 @@
             this.txtMaCN_tkCC.Name = "txtMaCN_tkCC";
             this.txtMaCN_tkCC.Size = new System.Drawing.Size(134, 21);
             this.txtMaCN_tkCC.TabIndex = 3;
+            this.txtMaCN_tkCC.TextChanged += new System.EventHandler(this.txtMaCN_tkCC_TextChanged);
             // 
             // label29
             // 
@@ -2680,10 +2692,10 @@
             // tabPage5
             // 
             this.tabPage5.Controls.Add(this.tabControl2);
-            this.tabPage5.Location = new System.Drawing.Point(4, 22);
+            this.tabPage5.Location = new System.Drawing.Point(4, 24);
             this.tabPage5.Name = "tabPage5";
             this.tabPage5.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage5.Size = new System.Drawing.Size(1260, 675);
+            this.tabPage5.Size = new System.Drawing.Size(1260, 673);
             this.tabPage5.TabIndex = 4;
             this.tabPage5.Text = "Cài Đặt  ";
             this.tabPage5.UseVisualStyleBackColor = true;
@@ -2700,7 +2712,7 @@
             this.tabControl2.Location = new System.Drawing.Point(3, 3);
             this.tabControl2.Name = "tabControl2";
             this.tabControl2.SelectedIndex = 0;
-            this.tabControl2.Size = new System.Drawing.Size(1254, 669);
+            this.tabControl2.Size = new System.Drawing.Size(1254, 667);
             this.tabControl2.TabIndex = 0;
             // 
             // tabPage7
@@ -2709,7 +2721,7 @@
             this.tabPage7.Location = new System.Drawing.Point(4, 24);
             this.tabPage7.Name = "tabPage7";
             this.tabPage7.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage7.Size = new System.Drawing.Size(1246, 641);
+            this.tabPage7.Size = new System.Drawing.Size(1246, 639);
             this.tabPage7.TabIndex = 0;
             this.tabPage7.Text = "Tài khoản đăng nhập";
             this.tabPage7.UseVisualStyleBackColor = true;
@@ -2721,7 +2733,7 @@
             this.panel20.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel20.Location = new System.Drawing.Point(3, 3);
             this.panel20.Name = "panel20";
-            this.panel20.Size = new System.Drawing.Size(1240, 635);
+            this.panel20.Size = new System.Drawing.Size(1240, 633);
             this.panel20.TabIndex = 1;
             // 
             // panel21
@@ -2879,10 +2891,10 @@
             // 
             this.tabPage8.Controls.Add(this.panel25);
             this.tabPage8.Controls.Add(this.panel24);
-            this.tabPage8.Location = new System.Drawing.Point(4, 22);
+            this.tabPage8.Location = new System.Drawing.Point(4, 24);
             this.tabPage8.Name = "tabPage8";
             this.tabPage8.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage8.Size = new System.Drawing.Size(1246, 643);
+            this.tabPage8.Size = new System.Drawing.Size(1246, 641);
             this.tabPage8.TabIndex = 1;
             this.tabPage8.Text = "Phụ cấp";
             this.tabPage8.UseVisualStyleBackColor = true;
@@ -3033,9 +3045,9 @@
             this.tabPage10.Controls.Add(this.panel32);
             this.tabPage10.Controls.Add(this.panel31);
             this.tabPage10.Controls.Add(this.panel28);
-            this.tabPage10.Location = new System.Drawing.Point(4, 22);
+            this.tabPage10.Location = new System.Drawing.Point(4, 24);
             this.tabPage10.Name = "tabPage10";
-            this.tabPage10.Size = new System.Drawing.Size(1246, 643);
+            this.tabPage10.Size = new System.Drawing.Size(1246, 641);
             this.tabPage10.TabIndex = 3;
             this.tabPage10.Text = "Hợp đồng";
             this.tabPage10.UseVisualStyleBackColor = true;
@@ -3186,9 +3198,9 @@
             this.tabPage11.Controls.Add(this.panel35);
             this.tabPage11.Controls.Add(this.panel34);
             this.tabPage11.Controls.Add(this.panel33);
-            this.tabPage11.Location = new System.Drawing.Point(4, 22);
+            this.tabPage11.Location = new System.Drawing.Point(4, 24);
             this.tabPage11.Name = "tabPage11";
-            this.tabPage11.Size = new System.Drawing.Size(1246, 643);
+            this.tabPage11.Size = new System.Drawing.Size(1246, 641);
             this.tabPage11.TabIndex = 4;
             this.tabPage11.Text = "Chức Vụ";
             this.tabPage11.UseVisualStyleBackColor = true;
@@ -3334,9 +3346,9 @@
             this.tabPage9.Controls.Add(this.panel38);
             this.tabPage9.Controls.Add(this.panel37);
             this.tabPage9.Controls.Add(this.panel36);
-            this.tabPage9.Location = new System.Drawing.Point(4, 22);
+            this.tabPage9.Location = new System.Drawing.Point(4, 24);
             this.tabPage9.Name = "tabPage9";
-            this.tabPage9.Size = new System.Drawing.Size(1246, 643);
+            this.tabPage9.Size = new System.Drawing.Size(1246, 641);
             this.tabPage9.TabIndex = 5;
             this.tabPage9.Text = "Ca làm việc";
             this.tabPage9.UseVisualStyleBackColor = true;
@@ -3517,9 +3529,9 @@
             this.tabPage13.Controls.Add(this.panel23);
             this.tabPage13.Controls.Add(this.panel30);
             this.tabPage13.Controls.Add(this.panel2);
-            this.tabPage13.Location = new System.Drawing.Point(4, 22);
+            this.tabPage13.Location = new System.Drawing.Point(4, 24);
             this.tabPage13.Name = "tabPage13";
-            this.tabPage13.Size = new System.Drawing.Size(1246, 643);
+            this.tabPage13.Size = new System.Drawing.Size(1246, 641);
             this.tabPage13.TabIndex = 6;
             this.tabPage13.Text = "Hệ số lương";
             this.tabPage13.UseVisualStyleBackColor = true;
@@ -3687,17 +3699,6 @@
             this.panelEnd.Size = new System.Drawing.Size(1268, 16);
             this.panelEnd.TabIndex = 2;
             // 
-            // dgvLoadcn
-            // 
-            this.dgvLoadcn.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvLoadcn.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dgvLoadcn.Location = new System.Drawing.Point(0, 0);
-            this.dgvLoadcn.Name = "dgvLoadcn";
-            this.dgvLoadcn.Size = new System.Drawing.Size(609, 547);
-            this.dgvLoadcn.TabIndex = 0;
-            this.dgvLoadcn.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvLoadcn_CellClick);
-            this.dgvLoadcn.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvLoadcn_CellContentClick);
-            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -3729,6 +3730,7 @@
             this.groupBox4.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picCongnhan)).EndInit();
             this.panelDataGridView.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvLoadcn)).EndInit();
             this.tabPage6.ResumeLayout(false);
             this.panel14.ResumeLayout(false);
             this.groupBox2.ResumeLayout(false);
@@ -3822,7 +3824,6 @@
             this.panel30.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvHSL)).EndInit();
             this.panel2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dgvLoadcn)).EndInit();
             this.ResumeLayout(false);
 
         }
