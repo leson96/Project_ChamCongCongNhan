@@ -25,8 +25,7 @@ namespace ChamCong
             datagridView.Dock = DockStyle.Fill;
             panelDataGridView.Controls.Add(datagridView);
         }
-
-        private void btLoadCongnhan_Click(object sender, EventArgs e)
+        public void LoadCN()
         {
             try
             {
@@ -36,6 +35,10 @@ namespace ChamCong
             {
                 MessageBox.Show(p.ToString());
             }
+        }
+        private void btLoadCongnhan_Click(object sender, EventArgs e)
+        {
+            LoadCN();
         }
         private void Form1_Load(object sender, EventArgs e)
         {
@@ -59,7 +62,7 @@ namespace ChamCong
                 txtTrinhdoVH.Text = dgvLoadcn.CurrentRow.Cells[18].Value.ToString();
                 txtDantoc.Text = dgvLoadcn.CurrentRow.Cells[7].Value.ToString();
                 txtNoisinh.Text = dgvLoadcn.CurrentRow.Cells[5].Value.ToString();
-                txtQuoctich.Text = dgvLoadcn.CurrentRow.Cells[28].Value.ToString();
+                txtQuoctich.Text = dgvLoadcn.CurrentRow.Cells[27].Value.ToString();
                 txttongiao.Text = dgvLoadcn.CurrentRow.Cells[8].Value.ToString();
                 txtQuequan.Text = dgvLoadcn.CurrentRow.Cells[9].Value.ToString();
                 cbhonnhan.Text = dgvLoadcn.CurrentRow.Cells[15].Value.ToString();
@@ -68,8 +71,8 @@ namespace ChamCong
                 txtNoicap.Text = dgvLoadcn.CurrentRow.Cells[23].Value.ToString();
                 txtSonha.Text = dgvLoadcn.CurrentRow.Cells[10].Value.ToString();
                 txtTKnganhang.Text = dgvLoadcn.CurrentRow.Cells[22].Value.ToString();
-                textBox58.Text = dgvLoadcn.CurrentRow.Cells[29].Value.ToString();
-                textBox1.Text = dgvLoadcn.CurrentRow.Cells[29].Value.ToString();
+                txtMaBHYT.Text = dgvLoadcn.CurrentRow.Cells[28].Value.ToString();
+                txtMaBHXH.Text = dgvLoadcn.CurrentRow.Cells[29].Value.ToString();
                 if (dgvLoadcn.CurrentRow.Cells[26].Value.ToString() != "1")
                     //picCongnhan.Image = Image.FromFile(dgvLoadcn.CurrentRow.Cells[26].Value.ToString());
                     picCongnhan.ImageLocation = dgvLoadcn.CurrentRow.Cells[26].Value.ToString();
@@ -90,7 +93,7 @@ namespace ChamCong
         {
             if (txtMaCN_tkCC.Text == "")
             {
-                MessageBox.Show("Khong co du lieu");
+                MessageBox.Show("Không có dữ liệu để checkin", "Thông báo");
                 return;
             }
             string day = DateTime.Now.DayOfWeek.ToString();
@@ -170,12 +173,12 @@ namespace ChamCong
 
         private void btThem_CN_Click(object sender, EventArgs e)
         {
-            if (txtHo.Text == "" || txtTen.Text == "" || cbGioitinh.Text == "" || dtNgaysinh.Value == null || txtNoisinh.Text == "" || txtCmnd.Text == "" || txtDantoc.Text == "" || txttongiao.Text == "" || txtQuequan.Text == "" || txtSonha.Text == "" || txtNoiOHien.Text == "" || txtSDTN.Text == "" || txtSDT.Text == "" || txtEmail.Text == "" || cbhonnhan.Text == "" || dtNgay.Value == null || txtNoilamviec.Text == "" || txtTrinhdoVH.Text == "" || txtMaCN_CC.Text == "" || txtMahesoluong.Text == "" || txtPhuCap.Text == "" || txtTKnganhang.Text == "" || txtNoicap.Text == "" || dtNgaycap.Value == null || picCongnhan.ImageLocation == "" || txtQuoctich.Text == "" || textBox58.Text == "" || textBox1.Text == "")
+            if (txtHo.Text == "" || txtTen.Text == "" || cbGioitinh.Text == "" || dtNgaysinh.Value == null || txtNoisinh.Text == "" || txtCmnd.Text == "" || txtDantoc.Text == "" || txttongiao.Text == "" || txtQuequan.Text == "" || txtSonha.Text == "" || txtNoiOHien.Text == "" || txtSDTN.Text == "" || txtSDT.Text == "" || txtEmail.Text == "" || cbhonnhan.Text == "" || dtNgay.Value == null || txtNoilamviec.Text == "" || txtTrinhdoVH.Text == "" || txtMaCN_CC.Text == "" || txtMahesoluong.Text == "" || txtPhuCap.Text == "" || txtTKnganhang.Text == "" || txtNoicap.Text == "" || dtNgaycap.Value == null || picCongnhan.ImageLocation == "" || txtQuoctich.Text == "" || txtMaBHXH.Text == "" || txtMaBHYT.Text == "")
             {
-                MessageBox.Show("Khong co du lieu");
+                MessageBox.Show("Không có dữ liệu để thêm", "Thông báo");
                 return;
             }
-            CongNhan cn = new CongNhan(txtMaCN_CN.Text, txtHo.Text, txtTen.Text, cbGioitinh.Text, dtNgaysinh.Value, txtNoisinh.Text, txtCmnd.Text, txtDantoc.Text, txttongiao.Text, txtQuequan.Text, txtSonha.Text, txtNoiOHien.Text, txtSDTN.Text, txtSDT.Text, txtEmail.Text, cbhonnhan.Text, dtNgay.Value, txtNoilamviec.Text, txtTrinhdoVH.Text, txtMaCN_CC.Text, txtMahesoluong.Text, txtPhuCap.Text, txtTKnganhang.Text, txtNoicap.Text, dtNgaycap.Value, picCongnhan.ImageLocation, "1", txtQuoctich.Text, textBox58.Text, textBox1.Text);
+            CongNhan cn = new CongNhan(txtMaCN_CN.Text, txtHo.Text, txtTen.Text, cbGioitinh.Text, dtNgaysinh.Value, txtNoisinh.Text, txtCmnd.Text, txtDantoc.Text, txttongiao.Text, txtQuequan.Text, txtSonha.Text, txtNoiOHien.Text, txtSDTN.Text, txtSDT.Text, txtEmail.Text, cbhonnhan.Text, dtNgay.Value, txtNoilamviec.Text, txtTrinhdoVH.Text, txtMaCN_CC.Text, txtMahesoluong.Text, txtPhuCap.Text, txtTKnganhang.Text, txtNoicap.Text, dtNgaycap.Value, picCongnhan.ImageLocation, "1", txtQuoctich.Text, txtMaBHXH.Text, txtMaBHYT.Text);
             try
             {
                 cnb.AddCongNhan(cn);
@@ -189,15 +192,16 @@ namespace ChamCong
 
         private void btSua_CN_Click(object sender, EventArgs e)
         {
-            if (txtHo.Text == "" || txtTen.Text == "" || cbGioitinh.Text == "" || dtNgaysinh.Value == null || txtNoisinh.Text == "" || txtCmnd.Text == "" || txtDantoc.Text == "" || txttongiao.Text == "" || txtQuequan.Text == "" || txtSonha.Text == "" || txtNoiOHien.Text == "" || txtSDTN.Text == "" || txtSDT.Text == "" || txtEmail.Text == "" || cbhonnhan.Text == "" || dtNgay.Value == null || txtNoilamviec.Text == "" || txtTrinhdoVH.Text == "" || txtMaCN_CC.Text == "" || txtMahesoluong.Text == "" || txtPhuCap.Text == "" || txtTKnganhang.Text == "" || txtNoicap.Text == "" || dtNgaycap.Value == null || picCongnhan.ImageLocation == "" || txtQuoctich.Text == "" || textBox58.Text == "" || textBox1.Text == "")
+            if (txtHo.Text == "" || txtTen.Text == "" || cbGioitinh.Text == "" || dtNgaysinh.Value == null || txtNoisinh.Text == "" || txtCmnd.Text == "" || txtDantoc.Text == "" || txttongiao.Text == "" || txtQuequan.Text == "" || txtSonha.Text == "" || txtNoiOHien.Text == "" || txtSDTN.Text == "" || txtSDT.Text == "" || txtEmail.Text == "" || cbhonnhan.Text == "" || dtNgay.Value == null || txtNoilamviec.Text == "" || txtTrinhdoVH.Text == "" || txtMaCN_CC.Text == "" || txtMahesoluong.Text == "" || txtPhuCap.Text == "" || txtTKnganhang.Text == "" || txtNoicap.Text == "" || dtNgaycap.Value == null || picCongnhan.ImageLocation == "" || txtQuoctich.Text == "" || txtMaBHXH.Text == "" || txtMaBHYT.Text == "")
             {
-                MessageBox.Show("Khong co du lieu");
+                MessageBox.Show("Không có dữ liệu để sửa", "Thông báo");
                 return;
             }
-            CongNhan cn = new CongNhan(txtMaCN_CN.Text, txtHo.Text, txtTen.Text, cbGioitinh.Text, dtNgaysinh.Value, txtNoisinh.Text, txtCmnd.Text, txtDantoc.Text, txttongiao.Text, txtQuequan.Text, txtSonha.Text, txtNoiOHien.Text, txtSDTN.Text, txtSDT.Text, txtEmail.Text, cbhonnhan.Text, dtNgay.Value, txtNoilamviec.Text, txtTrinhdoVH.Text, txtMaCN_CC.Text, txtMahesoluong.Text, txtPhuCap.Text, txtTKnganhang.Text, txtNoicap.Text, dtNgaycap.Value, picCongnhan.ImageLocation, "1", txtQuoctich.Text, textBox58.Text, textBox1.Text);
+            CongNhan cn = new CongNhan(txtMaCN_CN.Text, txtHo.Text, txtTen.Text, cbGioitinh.Text, dtNgaysinh.Value, txtNoisinh.Text, txtCmnd.Text, txtDantoc.Text, txttongiao.Text, txtQuequan.Text, txtSonha.Text, txtNoiOHien.Text, txtSDTN.Text, txtSDT.Text, txtEmail.Text, cbhonnhan.Text, dtNgay.Value, txtNoilamviec.Text, txtTrinhdoVH.Text, txtMaCN_CC.Text, txtMahesoluong.Text, txtPhuCap.Text, txtTKnganhang.Text, txtNoicap.Text, dtNgaycap.Value, picCongnhan.ImageLocation, "1", txtQuoctich.Text, txtMaBHXH.Text, txtMaBHYT.Text);
             try
             {
                 cnb.UpdateCongNhan(cn);
+                LoadCN();
             }
             catch (Exception p)
             {
@@ -210,13 +214,24 @@ namespace ChamCong
         {
             try
             {
-                if (txtMaCN_CN.Text == "")
+                DialogResult dlr = MessageBox.Show("Bạn có chăn chắc xóa hay không??", "Thông Báo", MessageBoxButtons.YesNo);
+                if (dlr == DialogResult.Yes)
                 {
-                    MessageBox.Show("Khong co du lieu");
+                    if (txtMaCN_CN.Text == "")
+                    {
+                        MessageBox.Show("Không có dữ liệu để xóa", "Thông Báo");
+                        return;
+                    }
+                    if (cnb.DeleteCongNhan(txtMaCN_CN.Text) != 0)
+                    {
+                        MessageBox.Show("Xóa thành công", "Thông Báo");
+                        LoadCN();
+                    }
+                }
+                else
+                {
                     return;
                 }
-                if (cnb.DeleteCongNhan(txtMaCN_CN.Text) != 0)
-                    MessageBox.Show("Delete cong nhan");
             }
             catch (Exception p)
             {
@@ -229,7 +244,7 @@ namespace ChamCong
         {
             if (txtMaCN_tkCC.Text == "")
             {
-                MessageBox.Show("Khong co du lieu");
+                MessageBox.Show("Không có dữ liệu để Checkout", "Thông báo");
                 return;
             }
             try
@@ -245,11 +260,11 @@ namespace ChamCong
             }
         }
 
-        private void btXoa_CC_Click(object sender, EventArgs e)
+        private void btXoa_ChamC_Click(object sender, EventArgs e)
         {
             if (txtMaCN_CC.Text == "")
             {
-                MessageBox.Show("Khong co du lieu");
+                MessageBox.Show("Không có dữ liệu để xóa", "Thông báo");
                 return;
             }
             try
@@ -336,7 +351,7 @@ namespace ChamCong
         {
             try
             {
-                dgvLuong.DataSource = new CongnhanBUS().ViewLuong("SELECT * FROM Luong").ToList();
+                dgvLuong.DataSource = new CongnhanBUS().ViewLuong("select Luong.*,CongNhan.Ho,CongNhan.Ten from Luong left join CongNhan on Luong.MaNV=CongNhan.MaNV").ToList();
             }
             catch (Exception p)
             {
@@ -362,8 +377,7 @@ namespace ChamCong
             }
 
         }
-
-        private void btLoadHD_Click(object sender, EventArgs e)
+        public void LoadHD()
         {
             try
             {
@@ -374,6 +388,11 @@ namespace ChamCong
 
                 MessageBox.Show(p.ToString());
             }
+
+        }
+        private void btLoadHD_Click(object sender, EventArgs e)
+        {
+            LoadHD();
         }
 
         private void dgvHD_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -403,7 +422,7 @@ namespace ChamCong
         {
             if (txtMaHD_HD.Text == "" || dtTungay_HD.Value == null || dtDenngay_HD.Value == null || dtNgayky_HD.Value == null || txtDieukhoan_HD.Text == "" || txtMaCN_HD.Text == "")
             {
-                MessageBox.Show("Khong co du lieu");
+                MessageBox.Show("Không có dữ liệu để thêm", "Thông báo");
                 return;
             }
             try
@@ -422,13 +441,14 @@ namespace ChamCong
         {
             if (txtMaHD_HD.Text == "" || dtTungay_HD.Value == null || dtDenngay_HD.Value == null || dtNgayky_HD.Value == null || txtDieukhoan_HD.Text == "" || txtMaCN_HD.Text == "")
             {
-                MessageBox.Show("Khong co du lieu");
+                MessageBox.Show("Không có dữ liệu để sửa", "Thông báo");
                 return;
             }
             try
             {
                 KyHopDong khd = new KyHopDong(txtMaHD_HD.Text, dtTungay_HD.Value, dtDenngay_HD.Value, dtNgayky_HD.Value, txtDieukhoan_HD.Text, txtMaCN_HD.Text);
                 cnb.UpdateKyHopDong(khd);
+                LoadHD();
             }
             catch (Exception p)
             {
@@ -438,19 +458,34 @@ namespace ChamCong
 
         private void btXoa_HD_Click(object sender, EventArgs e)
         {
-            if (txtMaHD_HD.Text == "" && txtMaCN_HD.Text == "")
-            {
-                MessageBox.Show("Không có dữ liệu");
-                return;
-            }
+
             try
             {
-                cnb.DeleteKyHopDong(txtMaHD_HD.Text, txtMaCN_HD.Text);
+                DialogResult dlr = MessageBox.Show("Bạn có chăn chắc xóa hay không??", "Thông Báo", MessageBoxButtons.YesNo);
+                if (dlr == DialogResult.Yes)
+                {
+                    if (txtMaHD_HD.Text == "" && txtMaCN_HD.Text == "")
+                    {
+                        MessageBox.Show("Không có dữ liệu để xóa", "Thông báo");
+                        return;
+                    }
+                    if (cnb.DeleteKyHopDong(txtMaHD_HD.Text, txtMaCN_HD.Text) != 0)
+                    {
+                        MessageBox.Show("Xóa thành công", "Thông Báo");
+                        LoadCN();
+                    }
+                }
+                else
+                {
+                    return;
+                }
             }
             catch (Exception p)
             {
-                MessageBox.Show(p.ToString());
+
+                throw p;
             }
+
         }
 
         private void btTimHD_Click(object sender, EventArgs e)
@@ -468,7 +503,7 @@ namespace ChamCong
                 }
                 if (txtMaHD_tk.Text == "" && txtMaCN_tkHD.Text == "")
                 {
-                    MessageBox.Show("Khong co du lieu");
+                    MessageBox.Show("Không có dữ liệu để tìm hợp đồng", "Thông báo");
                     return;
                 }
             }
@@ -486,8 +521,7 @@ namespace ChamCong
             else
                 return false;
         }
-
-        private void btLoadTK_Click(object sender, EventArgs e)
+        public void LoadTK()
         {
             try
             {
@@ -497,6 +531,11 @@ namespace ChamCong
             {
                 MessageBox.Show(p.ToString());
             }
+        }
+
+        private void btLoadTK_Click(object sender, EventArgs e)
+        {
+            LoadTK();
         }
 
         private void dgv_TaiKhoan_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -519,13 +558,14 @@ namespace ChamCong
         {
             if (txtTenTK.Text == "" || txtMaukhau.Text == "" && cbNhomquyen.Text == "")
             {
-                MessageBox.Show("Khong co du lieu");
+                MessageBox.Show("Không có dữ liệu để thêm", "Thông báo");
                 return;
             }
             TaiKhoan tk = new TaiKhoan(txtTenTK.Text, txtMaukhau.Text, cbNhomquyen.Text);
             try
             {
                 cnb.AddTaiKhoan(tk);
+                LoadTK();
             }
             catch (Exception p)
             {
@@ -537,13 +577,14 @@ namespace ChamCong
         {
             if (txtTenTK.Text == "" || txtMaukhau.Text == "" && cbNhomquyen.Text == "")
             {
-                MessageBox.Show("Khong co du lieu");
+                MessageBox.Show("Không có dữ liệu để sửa", "Thông báo");
                 return;
             }
             TaiKhoan tk = new TaiKhoan(txtTenTK.Text, txtMaukhau.Text, cbNhomquyen.Text);
             try
             {
                 cnb.UpdataTaiKhoan(tk);
+                LoadTK();
             }
             catch (Exception p)
             {
@@ -553,22 +594,52 @@ namespace ChamCong
 
         private void btXoaTK_Click(object sender, EventArgs e)
         {
-            if (txtTenTK.Text == "")
-            {
-                MessageBox.Show("Khong co du lieu");
-                return;
-            }
+
             try
             {
-                cnb.DeleteTaiKhoan(txtTenTK.Text);
+                DialogResult dlr = MessageBox.Show("Bạn có chăn chắc xóa hay không??", "Thông Báo", MessageBoxButtons.YesNo);
+                if (dlr == DialogResult.Yes)
+                {
+                    if (txtTenTK.Text == "")
+                    {
+                        MessageBox.Show("Không có dữ liệu để xóa", "Thông báo");
+                        return;
+                    }
+                    if (cnb.DeleteTaiKhoan(txtTenTK.Text) != 0)
+                    {
+                        MessageBox.Show("Xóa thành công", "Thông Báo");
+                        LoadTK();
+                    }
+                }
+                else
+                {
+                    return;
+                }
             }
             catch (Exception p)
             {
                 MessageBox.Show(p.ToString());
             }
         }
+        //    #region 
+        //    //if (txtTenTK.Text == "")
+        //    //{
+        //    //    MessageBox.Show("Không có dữ liệu để xóa", "Thông báo");
+        //    //    return;
+        //    //}
+        //    //try
+        //    //{
+        //    //    cnb.DeleteTaiKhoan(txtTenTK.Text);
+        //    //    LoadTK();
+        //    //}
+        //    //catch (Exception p)
+        //    //{
+        //    //    MessageBox.Show(p.ToString());
+        //    //}
+        //    #endregion
 
-        private void btLoadPC_Click(object sender, EventArgs e)
+        //}
+        public void LoadPC()
         {
             try
             {
@@ -578,6 +649,10 @@ namespace ChamCong
             {
                 MessageBox.Show(p.ToString());
             }
+        }
+        private void btLoadPC_Click(object sender, EventArgs e)
+        {
+            LoadPC();
         }
 
         private void dgvPhucap_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -600,7 +675,7 @@ namespace ChamCong
         {
             if (txtMaPC.Text == "" || txtTenPC.Text == "" || txtTienPC.Text == "")
             {
-                MessageBox.Show("Khong co du lieu");
+                MessageBox.Show("Không có dữ liệu để phụ cấp", "Thông báo");
                 return;
             }
             PhuCap pc = new PhuCap(txtMaPC.Text, txtTenPC.Text, int.Parse(txtTienPC.Text));
@@ -618,13 +693,14 @@ namespace ChamCong
         {
             if (txtMaPC.Text == "" || txtTenPC.Text == "" || txtTienPC.Text == "")
             {
-                MessageBox.Show("Khong co du lieu");
+                MessageBox.Show("Không có dữ liệu để sửa", "Thông báo");
                 return;
             }
             PhuCap pc = new PhuCap(txtMaPC.Text, txtTenPC.Text, int.Parse(txtTienPC.Text));
             try
             {
                 cnb.UpdatePhuCap(pc);
+                LoadPC();
             }
             catch (Exception p)
             {
@@ -634,22 +710,48 @@ namespace ChamCong
 
         private void btXoaPC_Click(object sender, EventArgs e)
         {
-            if (txtTenPC.Text == "")
-            {
-                MessageBox.Show("Khong co du lieu");
-                return;
-            }
             try
             {
-                cnb.DeletePhuCap(txtTenPC.Text);
+                DialogResult dlr = MessageBox.Show("Bạn có chăn chắc xóa hay không??", "Thông Báo", MessageBoxButtons.YesNo);
+                if (dlr == DialogResult.Yes)
+                {
+                    if (txtTenPC.Text == "")
+                    {
+                        MessageBox.Show("Không có dữ liệu để xóa", "Thông báo");
+                        return;
+                    }
+                    if(cnb.DeletePhuCap(txtTenPC.Text)!=0)
+                    {
+                        MessageBox.Show("Xóa thành công", "Thông Báo");
+                        LoadPC();
+                    }
+                }
+                else
+                {
+                    return;
+                }
             }
             catch (Exception p)
             {
+
                 MessageBox.Show(p.ToString());
             }
+            //if (txtTenPC.Text == "")
+            //{
+            //    MessageBox.Show("Không có dữ liệu để xóa", "Thông báo");
+            //    return;
+            //}
+            //try
+            //{
+            //    cnb.DeletePhuCap(txtTenPC.Text);
+            //    LoadPC();
+            //}
+            //catch (Exception p)
+            //{
+            //    MessageBox.Show(p.ToString());
+            //}
         }
-
-        private void btLoadHD_CD_Click(object sender, EventArgs e)
+        public void LoadHD_()
         {
             try
             {
@@ -660,18 +762,23 @@ namespace ChamCong
                 MessageBox.Show(p.ToString());
             }
         }
+        private void btLoadHD_CD_Click(object sender, EventArgs e)
+        {
+            LoadHD_();
+        }
 
         private void btThemHD_CD_Click(object sender, EventArgs e)
         {
             if (txtMaHD_CD.Text == "" || txtLoaiHD_CD.Text == "" || txtKyHanHD_CD.Text == "")
             {
-                MessageBox.Show("Khong co du lieu");
+                MessageBox.Show("Không có dữ liệu để thêm", "Thông báo");
                 return;
             }
             HopDong hd = new HopDong(txtMaHD_CD.Text, txtLoaiHD_CD.Text, txtKyHanHD_CD.Text);
             try
             {
                 cnb.AddHopDong(hd);
+                LoadHD_();
             }
             catch (Exception p)
             {
@@ -683,13 +790,14 @@ namespace ChamCong
         {
             if (txtMaHD_CD.Text == "" || txtLoaiHD_CD.Text == "" || txtKyHanHD_CD.Text == "")
             {
-                MessageBox.Show("Khong co du lieu");
+                MessageBox.Show("Không có dữ liệu để sửa", "Thông báo");
                 return;
             }
             HopDong hd = new HopDong(txtMaHD_CD.Text, txtLoaiHD_CD.Text, txtKyHanHD_CD.Text);
             try
             {
                 cnb.UpdateHopDong(hd);
+                LoadHD_();
             }
             catch (Exception p)
             {
@@ -699,19 +807,41 @@ namespace ChamCong
 
         private void btXoaHD_CD_Click(object sender, EventArgs e)
         {
-            if (txtMaHD_CD.Text == "")
-            {
-                MessageBox.Show("Khong co du lieu");
-                return;
-            }
             try
             {
-                cnb.DeleteHopDong(txtMaHD_CD.Text);
+                 DialogResult dlr = MessageBox.Show("Bạn có chăn chắc xóa hay không??", "Thông Báo", MessageBoxButtons.YesNo);
+                 if (dlr == DialogResult.Yes)
+                 {
+                     if (txtMaHD_CD.Text == "")
+                     {
+                         MessageBox.Show("Không có dữ liệu để xóa", "Thông báo");
+                         return;
+                     }
+                     if( cnb.DeleteHopDong(txtMaHD_CD.Text)!=0)
+                     {
+                         MessageBox.Show("Xóa thành công", "Thông Báo");
+                         LoadHD_();
+                     }
+                 }
+                 else
+                 {
+                     return;
+                 }
             }
             catch (Exception p)
             {
                 MessageBox.Show(p.ToString());
             }
+
+            //try
+            //{
+            //    cnb.DeleteHopDong(txtMaHD_CD.Text);
+               
+            //}
+            //catch (Exception p)
+            //{
+            //    MessageBox.Show(p.ToString());
+            //}
         }
 
         private void dgvHD_CD_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -729,8 +859,7 @@ namespace ChamCong
             }
 
         }
-
-        private void btLoadCV_Click(object sender, EventArgs e)
+        public void LoadCVu()
         {
             try
             {
@@ -740,6 +869,10 @@ namespace ChamCong
             {
                 MessageBox.Show(p.ToString());
             }
+        }
+        private void btLoadCV_Click(object sender, EventArgs e)
+        {
+            LoadCVu();
         }
 
         private void dgvLoaiCV_CD_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -756,8 +889,7 @@ namespace ChamCong
             }
 
         }
-
-        private void btLoadCa_Click(object sender, EventArgs e)
+        public void LoadCLV()
         {
             try
             {
@@ -768,6 +900,10 @@ namespace ChamCong
 
                 MessageBox.Show(p.ToString());
             }
+        }
+        private void btLoadCa_Click(object sender, EventArgs e)
+        {
+            LoadCLV();
         }
         private void dgvCaLV_CellClick(object sender, DataGridViewCellEventArgs e)
         {
@@ -789,13 +925,14 @@ namespace ChamCong
         {
             if (txtMaCV_CD.Text == "" && txtTenCV_CD.Text == "")
             {
-                MessageBox.Show("Khong co du lieu");
+                MessageBox.Show("Không có dữ liệu để thêm", "Thông báo");
                 return;
             }
             ChucVu cv = new ChucVu(txtMaCV_CD.Text, txtTenCV_CD.Text);
             try
             {
                 cnb.AddChucVu(cv);
+                LoadCVu();
             }
             catch (Exception p)
             {
@@ -807,13 +944,14 @@ namespace ChamCong
         {
             if (txtMaCV_CD.Text == "" && txtTenCV_CD.Text == "")
             {
-                MessageBox.Show("Khong co du lieu");
+                MessageBox.Show("Không có dữ liệu để sửa", "Thông báo");
                 return;
             }
             ChucVu cv = new ChucVu(txtMaCV_CD.Text, txtTenCV_CD.Text);
             try
             {
                 cnb.UpdateChucVu(cv);
+                LoadCVu();
             }
             catch (Exception p)
             {
@@ -823,22 +961,48 @@ namespace ChamCong
 
         private void btXoaCV_CD_Click(object sender, EventArgs e)
         {
-            if (txtMaCV_CD.Text == "")
-            {
-                MessageBox.Show("Khong co du lieu");
-                return;
-            }
             try
             {
-                cnb.DeleteChucVu(txtMaCV_CD.Text);
+                 DialogResult dlr = MessageBox.Show("Bạn có chăn chắc xóa hay không??", "Thông Báo", MessageBoxButtons.YesNo);
+                 if (dlr == DialogResult.Yes)
+                 {
+                     if (txtMaCV_CD.Text == "")
+                     {
+                         MessageBox.Show("Không có dữ liệu để xóa", "Thông báo");
+                         return;
+                     }
+                     if(cnb.DeleteChucVu(txtMaCV_CD.Text)!=0)
+                     {
+                         MessageBox.Show("Xóa thành công", "Thông Báo");
+                         LoadCVu();
+                     }
+                 }
+                 else
+                 {
+                     return;
+                 }
             }
             catch (Exception p)
             {
                 MessageBox.Show(p.ToString());
             }
+            
+            //if (txtMaCV_CD.Text == "")
+            //{
+            //    MessageBox.Show("Không có dữ liệu để xóa", "Thông báo");
+            //    return;
+            //}
+            //try
+            //{
+            //    cnb.DeleteChucVu(txtMaCV_CD.Text);
+            //    LoadCVu();
+            //}
+            //catch (Exception p)
+            //{
+            //    MessageBox.Show(p.ToString());
+            //}
         }
-
-        private void btHSL_Click(object sender, EventArgs e)
+        public void LoadHSL_()
         {
             try
             {
@@ -848,6 +1012,10 @@ namespace ChamCong
             {
                 MessageBox.Show(p.ToString());
             }
+        }
+        private void btHSL_Click(object sender, EventArgs e)
+        {
+            LoadHSL_();
         }
 
         private void dgvHSL_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -870,13 +1038,14 @@ namespace ChamCong
         {
             if (MaHSL.Text == "" || txtTenHSL.Text == "" || txtHSL.Text == "")
             {
-                MessageBox.Show("Khong co du lieu");
+                MessageBox.Show("Không có dữ liệu để thêm", "Thông báo");
                 return;
             }
             HeSoLuong hsl = new HeSoLuong(MaHSL.Text, txtTenHSL.Text, int.Parse(txtHSL.Text));
             try
             {
                 cnb.AddHeSoLuong(hsl);
+                LoadHSL_();
             }
             catch (Exception p)
             {
@@ -888,13 +1057,14 @@ namespace ChamCong
         {
             if (MaHSL.Text == "" || txtTenHSL.Text == "" || txtHSL.Text == "")
             {
-                MessageBox.Show("Khong co du lieu");
+                MessageBox.Show("Không có dữ liệu để sửa", "Thông báo");
                 return;
             }
             HeSoLuong hsl = new HeSoLuong(MaHSL.Text, txtTenHSL.Text, int.Parse(txtHSL.Text));
             try
             {
                 cnb.UpdateHeSoLuong(hsl);
+                LoadHSL_();
             }
             catch (Exception p)
             {
@@ -904,19 +1074,48 @@ namespace ChamCong
 
         private void btXoaHSL_Click(object sender, EventArgs e)
         {
-            if (MaHSL.Text == "")
-            {
-                MessageBox.Show("Khong co du lieu");
-                return;
-            }
+
             try
             {
-                cnb.DeleteHeSoLuong(MaHSL.Text);
+                DialogResult dlr = MessageBox.Show("Bạn có chăn chắc xóa hay không??", "Thông Báo", MessageBoxButtons.YesNo);
+                if (dlr == DialogResult.Yes)
+                {
+                    if (MaHSL.Text == "")
+                    {
+                        MessageBox.Show("Không có dữ liệu để xóa", "Thông báo");
+                        return;
+                    }
+                    if(cnb.DeleteHeSoLuong(MaHSL.Text)!=0)
+                    {
+                        MessageBox.Show("Xóa thành công", "Thông Báo");
+                        LoadHSL_();
+                    }
+                }
+                else
+                {
+                    return;
+                }
+
             }
             catch (Exception p)
             {
                 MessageBox.Show(p.ToString());
             }
+
+            //if (MaHSL.Text == "")
+            //{
+            //    MessageBox.Show("Không có dữ liệu để xóa", "Thông báo");
+            //    return;
+            //}
+            //try
+            //{
+            //    cnb.DeleteHeSoLuong(MaHSL.Text);
+            //    LoadHSL_();
+            //}
+            //catch (Exception p)
+            //{
+            //    MessageBox.Show(p.ToString());
+            //}
         }
 
         private void btTimLuong_Click(object sender, EventArgs e)
@@ -969,7 +1168,7 @@ namespace ChamCong
         {
             if (txtTenCN.Text == "")
             {
-                MessageBox.Show("Khong co du lieu");
+                MessageBox.Show("Không có dữ liệu để tìm", "Thông báo");
                 return;
             }
             try
@@ -1055,7 +1254,7 @@ namespace ChamCong
 
             if (txtTenCN.Text == "")
             {
-                MessageBox.Show("Khong co du lieu");
+                MessageBox.Show("Không có dữ liệu để tìm", "Thông báo");
                 return;
             }
             try
@@ -1114,12 +1313,60 @@ namespace ChamCong
                 return true;
             }
         }
-       
-        public bool TimKiemHopDong(string MaHD,string MaCN)
+
+        public bool TimKiemHopDong(string MaHD, string MaCN)
         {
             if (MaHD == "HD01" && MaCN == "CN01")
                 return true;
             return false;
+        }
+
+        private void btnXoa_ChamCong_Click(object sender, EventArgs e)
+        {
+
+            #region
+            //if (txtMaCN_CC.Text == "")
+            //{
+            //    MessageBox.Show("Không có dữ liệu để xóa", "Thông báo");
+            //    return;
+            //}
+            //try
+            //{
+            //    cnb.DeleteGioLamViec(txtMaCN_CC.Text, dtNgay.Value);
+            //    dgvCheck.DataSource = new CongnhanBUS().ViewGioLamViec("SELECT *FROM GioLamViec").ToList();
+            //}
+            //catch (Exception p)
+            //{
+
+            //    MessageBox.Show(p.ToString());
+            //}
+            #endregion
+            try
+            {
+                DialogResult dlr = MessageBox.Show("Bạn có chăn chắc xóa hay không??", "Thông Báo", MessageBoxButtons.YesNo);
+                if (dlr == DialogResult.Yes)
+                {
+                    if (txtMaCN_CC.Text == "")
+                    {
+                        MessageBox.Show("Không có dữ liệu để xóa", "Thông báo");
+                        return;
+                    }
+                    if (cnb.DeleteGioLamViec(txtMaCN_CC.Text, dtNgay.Value) != 0)
+                    {
+                        dgvCheck.DataSource = new CongnhanBUS().ViewGioLamViec("SELECT *FROM GioLamViec").ToList();
+                    }
+                }
+                else
+                {
+                    return;
+                }
+            }
+            catch (Exception p)
+            {
+
+                MessageBox.Show(p.ToString());
+            }
+
         }
     }
 }

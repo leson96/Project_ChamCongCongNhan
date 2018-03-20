@@ -49,11 +49,11 @@
             this.txtPhuCap = new System.Windows.Forms.TextBox();
             this.panel17 = new System.Windows.Forms.Panel();
             this.label50 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txtMaBHYT = new System.Windows.Forms.TextBox();
             this.txtMahesoluong = new System.Windows.Forms.TextBox();
             this.label36 = new System.Windows.Forms.Label();
             this.label19 = new System.Windows.Forms.Label();
-            this.textBox58 = new System.Windows.Forms.TextBox();
+            this.txtMaBHXH = new System.Windows.Forms.TextBox();
             this.label59 = new System.Windows.Forms.Label();
             this.txtTKnganhang = new System.Windows.Forms.TextBox();
             this.label61 = new System.Windows.Forms.Label();
@@ -110,7 +110,7 @@
             this.dgvLoadcn = new System.Windows.Forms.DataGridView();
             this.tabPage6 = new System.Windows.Forms.TabPage();
             this.panel14 = new System.Windows.Forms.Panel();
-            this.btXoa_CC = new System.Windows.Forms.Button();
+            this.btnXoa_ChamCong = new System.Windows.Forms.Button();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.dtGiove = new System.Windows.Forms.TextBox();
             this.dtGiotoi = new System.Windows.Forms.TextBox();
@@ -211,8 +211,6 @@
             this.dtNgayky_HD = new System.Windows.Forms.DateTimePicker();
             this.dtDenngay_HD = new System.Windows.Forms.DateTimePicker();
             this.dtTungay_HD = new System.Windows.Forms.DateTimePicker();
-            this.label65 = new System.Windows.Forms.Label();
-            this.txtTenHD_HD = new System.Windows.Forms.TextBox();
             this.label60 = new System.Windows.Forms.Label();
             this.txtMaHD_HD = new System.Windows.Forms.TextBox();
             this.label83 = new System.Windows.Forms.Label();
@@ -308,7 +306,6 @@
             this.btLoadHD_CD = new System.Windows.Forms.Button();
             this.tabPage11 = new System.Windows.Forms.TabPage();
             this.panel35 = new System.Windows.Forms.Panel();
-            this.btLuuCV_CD = new System.Windows.Forms.Button();
             this.btXoaCV_CD = new System.Windows.Forms.Button();
             this.btThemCV_CD = new System.Windows.Forms.Button();
             this.btSuaCV_CD = new System.Windows.Forms.Button();
@@ -324,7 +321,6 @@
             this.panel38 = new System.Windows.Forms.Panel();
             this.dtGioketthuc = new System.Windows.Forms.DateTimePicker();
             this.dtGiobatdau = new System.Windows.Forms.DateTimePicker();
-            this.btLuuCa = new System.Windows.Forms.Button();
             this.btXoaCa = new System.Windows.Forms.Button();
             this.btThemCa = new System.Windows.Forms.Button();
             this.btSuaCa = new System.Windows.Forms.Button();
@@ -340,7 +336,6 @@
             this.btLoadCa = new System.Windows.Forms.Button();
             this.tabPage13 = new System.Windows.Forms.TabPage();
             this.panel23 = new System.Windows.Forms.Panel();
-            this.btLuuHSL = new System.Windows.Forms.Button();
             this.btXoaHSL = new System.Windows.Forms.Button();
             this.btThemHSL = new System.Windows.Forms.Button();
             this.btSuaHSL = new System.Windows.Forms.Button();
@@ -642,11 +637,11 @@
             this.groupBox6.Controls.Add(this.txtPhuCap);
             this.groupBox6.Controls.Add(this.panel17);
             this.groupBox6.Controls.Add(this.label50);
-            this.groupBox6.Controls.Add(this.textBox1);
+            this.groupBox6.Controls.Add(this.txtMaBHYT);
             this.groupBox6.Controls.Add(this.txtMahesoluong);
             this.groupBox6.Controls.Add(this.label36);
             this.groupBox6.Controls.Add(this.label19);
-            this.groupBox6.Controls.Add(this.textBox58);
+            this.groupBox6.Controls.Add(this.txtMaBHXH);
             this.groupBox6.Controls.Add(this.label59);
             this.groupBox6.Controls.Add(this.txtTKnganhang);
             this.groupBox6.Controls.Add(this.label61);
@@ -680,12 +675,12 @@
             this.label50.TabIndex = 10;
             this.label50.Text = "Ma Phu Cap";
             // 
-            // textBox1
+            // txtMaBHYT
             // 
-            this.textBox1.Location = new System.Drawing.Point(494, 19);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(209, 21);
-            this.textBox1.TabIndex = 3;
+            this.txtMaBHYT.Location = new System.Drawing.Point(494, 19);
+            this.txtMaBHYT.Name = "txtMaBHYT";
+            this.txtMaBHYT.Size = new System.Drawing.Size(209, 21);
+            this.txtMaBHYT.TabIndex = 3;
             // 
             // txtMahesoluong
             // 
@@ -712,12 +707,12 @@
             this.label19.TabIndex = 8;
             this.label19.Text = "Mã Hệ Số Lương";
             // 
-            // textBox58
+            // txtMaBHXH
             // 
-            this.textBox58.Location = new System.Drawing.Point(158, 49);
-            this.textBox58.Name = "textBox58";
-            this.textBox58.Size = new System.Drawing.Size(209, 21);
-            this.textBox58.TabIndex = 3;
+            this.txtMaBHXH.Location = new System.Drawing.Point(158, 49);
+            this.txtMaBHXH.Name = "txtMaBHXH";
+            this.txtMaBHXH.Size = new System.Drawing.Size(209, 21);
+            this.txtMaBHXH.TabIndex = 3;
             // 
             // label59
             // 
@@ -1241,25 +1236,25 @@
             this.panel14.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.panel14.Controls.Add(this.btXoa_CC);
+            this.panel14.Controls.Add(this.btnXoa_ChamCong);
             this.panel14.Controls.Add(this.groupBox2);
             this.panel14.Location = new System.Drawing.Point(675, 125);
             this.panel14.Name = "panel14";
             this.panel14.Size = new System.Drawing.Size(587, 522);
             this.panel14.TabIndex = 3;
             // 
-            // btXoa_CC
+            // btnXoa_ChamCong
             // 
-            this.btXoa_CC.Image = global::ChamCong.Properties.Resources.delete;
-            this.btXoa_CC.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btXoa_CC.Location = new System.Drawing.Point(266, 417);
-            this.btXoa_CC.Name = "btXoa_CC";
-            this.btXoa_CC.Size = new System.Drawing.Size(103, 59);
-            this.btXoa_CC.TabIndex = 27;
-            this.btXoa_CC.Text = "Xóa";
-            this.btXoa_CC.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.btXoa_CC.UseVisualStyleBackColor = true;
-            this.btXoa_CC.Click += new System.EventHandler(this.btXoa_CC_Click);
+            this.btnXoa_ChamCong.Image = global::ChamCong.Properties.Resources.delete;
+            this.btnXoa_ChamCong.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.btnXoa_ChamCong.Location = new System.Drawing.Point(266, 417);
+            this.btnXoa_ChamCong.Name = "btnXoa_ChamCong";
+            this.btnXoa_ChamCong.Size = new System.Drawing.Size(103, 59);
+            this.btnXoa_ChamCong.TabIndex = 27;
+            this.btnXoa_ChamCong.Text = "Xóa";
+            this.btnXoa_ChamCong.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnXoa_ChamCong.UseVisualStyleBackColor = true;
+            this.btnXoa_ChamCong.Click += new System.EventHandler(this.btnXoa_ChamCong_Click);
             // 
             // groupBox2
             // 
@@ -1497,7 +1492,6 @@
             this.txtMaCN_tkCC.Name = "txtMaCN_tkCC";
             this.txtMaCN_tkCC.Size = new System.Drawing.Size(134, 21);
             this.txtMaCN_tkCC.TabIndex = 3;
-            //this.txtMaCN_tkCC.TextChanged += new System.EventHandler(this.txtMaCN_tkCC_TextChanged);
             // 
             // label29
             // 
@@ -2187,7 +2181,6 @@
             this.dgvHD.Size = new System.Drawing.Size(708, 529);
             this.dgvHD.TabIndex = 10;
             this.dgvHD.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvHD_CellClick);
-            //this.dgvHD.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvHD_CellContentClick);
             // 
             // panel43
             // 
@@ -2205,8 +2198,6 @@
             this.groupBox7.Controls.Add(this.dtNgayky_HD);
             this.groupBox7.Controls.Add(this.dtDenngay_HD);
             this.groupBox7.Controls.Add(this.dtTungay_HD);
-            this.groupBox7.Controls.Add(this.label65);
-            this.groupBox7.Controls.Add(this.txtTenHD_HD);
             this.groupBox7.Controls.Add(this.label60);
             this.groupBox7.Controls.Add(this.txtMaHD_HD);
             this.groupBox7.Controls.Add(this.label83);
@@ -2230,7 +2221,7 @@
             // dtNgayky_HD
             // 
             this.dtNgayky_HD.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtNgayky_HD.Location = new System.Drawing.Point(193, 269);
+            this.dtNgayky_HD.Location = new System.Drawing.Point(190, 237);
             this.dtNgayky_HD.Name = "dtNgayky_HD";
             this.dtNgayky_HD.Size = new System.Drawing.Size(112, 21);
             this.dtNgayky_HD.TabIndex = 23;
@@ -2239,7 +2230,7 @@
             // 
             this.dtDenngay_HD.Enabled = false;
             this.dtDenngay_HD.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtDenngay_HD.Location = new System.Drawing.Point(193, 234);
+            this.dtDenngay_HD.Location = new System.Drawing.Point(190, 202);
             this.dtDenngay_HD.Name = "dtDenngay_HD";
             this.dtDenngay_HD.Size = new System.Drawing.Size(112, 21);
             this.dtDenngay_HD.TabIndex = 24;
@@ -2247,26 +2238,10 @@
             // dtTungay_HD
             // 
             this.dtTungay_HD.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtTungay_HD.Location = new System.Drawing.Point(194, 199);
+            this.dtTungay_HD.Location = new System.Drawing.Point(191, 167);
             this.dtTungay_HD.Name = "dtTungay_HD";
             this.dtTungay_HD.Size = new System.Drawing.Size(112, 21);
             this.dtTungay_HD.TabIndex = 25;
-            // 
-            // label65
-            // 
-            this.label65.AutoSize = true;
-            this.label65.Location = new System.Drawing.Point(83, 95);
-            this.label65.Name = "label65";
-            this.label65.Size = new System.Drawing.Size(83, 15);
-            this.label65.TabIndex = 16;
-            this.label65.Text = "Tên hợp đồng";
-            // 
-            // txtTenHD_HD
-            // 
-            this.txtTenHD_HD.Location = new System.Drawing.Point(194, 92);
-            this.txtTenHD_HD.Name = "txtTenHD_HD";
-            this.txtTenHD_HD.Size = new System.Drawing.Size(170, 21);
-            this.txtTenHD_HD.TabIndex = 12;
             // 
             // label60
             // 
@@ -2287,7 +2262,7 @@
             // label83
             // 
             this.label83.AutoSize = true;
-            this.label83.Location = new System.Drawing.Point(83, 272);
+            this.label83.Location = new System.Drawing.Point(80, 240);
             this.label83.Name = "label83";
             this.label83.Size = new System.Drawing.Size(104, 15);
             this.label83.TabIndex = 17;
@@ -2296,7 +2271,7 @@
             // label95
             // 
             this.label95.AutoSize = true;
-            this.label95.Location = new System.Drawing.Point(83, 307);
+            this.label95.Location = new System.Drawing.Point(80, 275);
             this.label95.Name = "label95";
             this.label95.Size = new System.Drawing.Size(70, 15);
             this.label95.TabIndex = 18;
@@ -2304,7 +2279,7 @@
             // 
             // txtDieukhoan_HD
             // 
-            this.txtDieukhoan_HD.Location = new System.Drawing.Point(194, 304);
+            this.txtDieukhoan_HD.Location = new System.Drawing.Point(191, 272);
             this.txtDieukhoan_HD.Multiline = true;
             this.txtDieukhoan_HD.Name = "txtDieukhoan_HD";
             this.txtDieukhoan_HD.Size = new System.Drawing.Size(404, 85);
@@ -2313,7 +2288,7 @@
             // label94
             // 
             this.label94.AutoSize = true;
-            this.label94.Location = new System.Drawing.Point(83, 237);
+            this.label94.Location = new System.Drawing.Point(80, 205);
             this.label94.Name = "label94";
             this.label94.Size = new System.Drawing.Size(59, 15);
             this.label94.TabIndex = 19;
@@ -2322,7 +2297,7 @@
             // label64
             // 
             this.label64.AutoSize = true;
-            this.label64.Location = new System.Drawing.Point(83, 167);
+            this.label64.Location = new System.Drawing.Point(80, 135);
             this.label64.Name = "label64";
             this.label64.Size = new System.Drawing.Size(44, 15);
             this.label64.TabIndex = 20;
@@ -2331,7 +2306,7 @@
             // label93
             // 
             this.label93.AutoSize = true;
-            this.label93.Location = new System.Drawing.Point(83, 202);
+            this.label93.Location = new System.Drawing.Point(80, 170);
             this.label93.Name = "label93";
             this.label93.Size = new System.Drawing.Size(50, 15);
             this.label93.TabIndex = 20;
@@ -2340,7 +2315,7 @@
             // label92
             // 
             this.label92.AutoSize = true;
-            this.label92.Location = new System.Drawing.Point(82, 132);
+            this.label92.Location = new System.Drawing.Point(79, 100);
             this.label92.Name = "label92";
             this.label92.Size = new System.Drawing.Size(89, 15);
             this.label92.TabIndex = 21;
@@ -2348,14 +2323,14 @@
             // 
             // txtKyhan_HD
             // 
-            this.txtKyhan_HD.Location = new System.Drawing.Point(193, 164);
+            this.txtKyhan_HD.Location = new System.Drawing.Point(190, 132);
             this.txtKyhan_HD.Name = "txtKyhan_HD";
             this.txtKyhan_HD.Size = new System.Drawing.Size(170, 21);
             this.txtKyhan_HD.TabIndex = 14;
             // 
             // txtTenCN_HD
             // 
-            this.txtTenCN_HD.Location = new System.Drawing.Point(193, 129);
+            this.txtTenCN_HD.Location = new System.Drawing.Point(190, 97);
             this.txtTenCN_HD.Name = "txtTenCN_HD";
             this.txtTenCN_HD.Size = new System.Drawing.Size(170, 21);
             this.txtTenCN_HD.TabIndex = 14;
@@ -3208,7 +3183,6 @@
             // 
             // panel35
             // 
-            this.panel35.Controls.Add(this.btLuuCV_CD);
             this.panel35.Controls.Add(this.btXoaCV_CD);
             this.panel35.Controls.Add(this.btThemCV_CD);
             this.panel35.Controls.Add(this.btSuaCV_CD);
@@ -3221,23 +3195,11 @@
             this.panel35.Size = new System.Drawing.Size(530, 346);
             this.panel35.TabIndex = 6;
             // 
-            // btLuuCV_CD
-            // 
-            this.btLuuCV_CD.Image = global::ChamCong.Properties.Resources.save;
-            this.btLuuCV_CD.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btLuuCV_CD.Location = new System.Drawing.Point(402, 271);
-            this.btLuuCV_CD.Name = "btLuuCV_CD";
-            this.btLuuCV_CD.Size = new System.Drawing.Size(103, 59);
-            this.btLuuCV_CD.TabIndex = 48;
-            this.btLuuCV_CD.Text = "Lưu";
-            this.btLuuCV_CD.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.btLuuCV_CD.UseVisualStyleBackColor = true;
-            // 
             // btXoaCV_CD
             // 
             this.btXoaCV_CD.Image = global::ChamCong.Properties.Resources.delete;
             this.btXoaCV_CD.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btXoaCV_CD.Location = new System.Drawing.Point(281, 271);
+            this.btXoaCV_CD.Location = new System.Drawing.Point(341, 249);
             this.btXoaCV_CD.Name = "btXoaCV_CD";
             this.btXoaCV_CD.Size = new System.Drawing.Size(103, 59);
             this.btXoaCV_CD.TabIndex = 49;
@@ -3250,7 +3212,7 @@
             // 
             this.btThemCV_CD.Image = global::ChamCong.Properties.Resources.Them;
             this.btThemCV_CD.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btThemCV_CD.Location = new System.Drawing.Point(39, 271);
+            this.btThemCV_CD.Location = new System.Drawing.Point(99, 249);
             this.btThemCV_CD.Name = "btThemCV_CD";
             this.btThemCV_CD.Size = new System.Drawing.Size(103, 59);
             this.btThemCV_CD.TabIndex = 50;
@@ -3263,7 +3225,7 @@
             // 
             this.btSuaCV_CD.Image = global::ChamCong.Properties.Resources.update;
             this.btSuaCV_CD.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btSuaCV_CD.Location = new System.Drawing.Point(160, 271);
+            this.btSuaCV_CD.Location = new System.Drawing.Point(220, 249);
             this.btSuaCV_CD.Name = "btSuaCV_CD";
             this.btSuaCV_CD.Size = new System.Drawing.Size(103, 59);
             this.btSuaCV_CD.TabIndex = 51;
@@ -3358,7 +3320,6 @@
             // 
             this.panel38.Controls.Add(this.dtGioketthuc);
             this.panel38.Controls.Add(this.dtGiobatdau);
-            this.panel38.Controls.Add(this.btLuuCa);
             this.panel38.Controls.Add(this.btXoaCa);
             this.panel38.Controls.Add(this.btThemCa);
             this.panel38.Controls.Add(this.btSuaCa);
@@ -3389,23 +3350,11 @@
             this.dtGiobatdau.Size = new System.Drawing.Size(122, 21);
             this.dtGiobatdau.TabIndex = 56;
             // 
-            // btLuuCa
-            // 
-            this.btLuuCa.Image = global::ChamCong.Properties.Resources.save;
-            this.btLuuCa.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btLuuCa.Location = new System.Drawing.Point(414, 291);
-            this.btLuuCa.Name = "btLuuCa";
-            this.btLuuCa.Size = new System.Drawing.Size(103, 59);
-            this.btLuuCa.TabIndex = 52;
-            this.btLuuCa.Text = "Lưu";
-            this.btLuuCa.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.btLuuCa.UseVisualStyleBackColor = true;
-            // 
             // btXoaCa
             // 
             this.btXoaCa.Image = global::ChamCong.Properties.Resources.delete;
             this.btXoaCa.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btXoaCa.Location = new System.Drawing.Point(293, 291);
+            this.btXoaCa.Location = new System.Drawing.Point(346, 291);
             this.btXoaCa.Name = "btXoaCa";
             this.btXoaCa.Size = new System.Drawing.Size(103, 59);
             this.btXoaCa.TabIndex = 53;
@@ -3417,7 +3366,7 @@
             // 
             this.btThemCa.Image = global::ChamCong.Properties.Resources.Them;
             this.btThemCa.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btThemCa.Location = new System.Drawing.Point(51, 291);
+            this.btThemCa.Location = new System.Drawing.Point(104, 291);
             this.btThemCa.Name = "btThemCa";
             this.btThemCa.Size = new System.Drawing.Size(103, 59);
             this.btThemCa.TabIndex = 54;
@@ -3429,7 +3378,7 @@
             // 
             this.btSuaCa.Image = global::ChamCong.Properties.Resources.update;
             this.btSuaCa.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btSuaCa.Location = new System.Drawing.Point(172, 291);
+            this.btSuaCa.Location = new System.Drawing.Point(225, 291);
             this.btSuaCa.Name = "btSuaCa";
             this.btSuaCa.Size = new System.Drawing.Size(103, 59);
             this.btSuaCa.TabIndex = 55;
@@ -3539,7 +3488,6 @@
             // 
             // panel23
             // 
-            this.panel23.Controls.Add(this.btLuuHSL);
             this.panel23.Controls.Add(this.btXoaHSL);
             this.panel23.Controls.Add(this.btThemHSL);
             this.panel23.Controls.Add(this.btSuaHSL);
@@ -3554,23 +3502,11 @@
             this.panel23.Size = new System.Drawing.Size(547, 431);
             this.panel23.TabIndex = 9;
             // 
-            // btLuuHSL
-            // 
-            this.btLuuHSL.Image = global::ChamCong.Properties.Resources.save;
-            this.btLuuHSL.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btLuuHSL.Location = new System.Drawing.Point(414, 291);
-            this.btLuuHSL.Name = "btLuuHSL";
-            this.btLuuHSL.Size = new System.Drawing.Size(103, 59);
-            this.btLuuHSL.TabIndex = 52;
-            this.btLuuHSL.Text = "Lưu";
-            this.btLuuHSL.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.btLuuHSL.UseVisualStyleBackColor = true;
-            // 
             // btXoaHSL
             // 
             this.btXoaHSL.Image = global::ChamCong.Properties.Resources.delete;
             this.btXoaHSL.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btXoaHSL.Location = new System.Drawing.Point(293, 291);
+            this.btXoaHSL.Location = new System.Drawing.Point(350, 291);
             this.btXoaHSL.Name = "btXoaHSL";
             this.btXoaHSL.Size = new System.Drawing.Size(103, 59);
             this.btXoaHSL.TabIndex = 53;
@@ -3583,7 +3519,7 @@
             // 
             this.btThemHSL.Image = global::ChamCong.Properties.Resources.Them;
             this.btThemHSL.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btThemHSL.Location = new System.Drawing.Point(51, 291);
+            this.btThemHSL.Location = new System.Drawing.Point(108, 291);
             this.btThemHSL.Name = "btThemHSL";
             this.btThemHSL.Size = new System.Drawing.Size(103, 59);
             this.btThemHSL.TabIndex = 54;
@@ -3596,7 +3532,7 @@
             // 
             this.btSuaHSL.Image = global::ChamCong.Properties.Resources.update;
             this.btSuaHSL.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btSuaHSL.Location = new System.Drawing.Point(172, 291);
+            this.btSuaHSL.Location = new System.Drawing.Point(229, 291);
             this.btSuaHSL.Name = "btSuaHSL";
             this.btSuaHSL.Size = new System.Drawing.Size(103, 59);
             this.btSuaHSL.TabIndex = 55;
@@ -3936,7 +3872,7 @@
         private System.Windows.Forms.Label label43;
         private System.Windows.Forms.Label label44;
         private System.Windows.Forms.GroupBox groupBox6;
-        private System.Windows.Forms.TextBox textBox58;
+        private System.Windows.Forms.TextBox txtMaBHXH;
         private System.Windows.Forms.Label label59;
         private System.Windows.Forms.TextBox txtTKnganhang;
         private System.Windows.Forms.Label label61;
@@ -4002,7 +3938,6 @@
         private System.Windows.Forms.Panel panel28;
         private System.Windows.Forms.Button btLoadHD_CD;
         private System.Windows.Forms.Panel panel35;
-        private System.Windows.Forms.Button btLuuCV_CD;
         private System.Windows.Forms.Button btXoaCV_CD;
         private System.Windows.Forms.Button btThemCV_CD;
         private System.Windows.Forms.Button btSuaCV_CD;
@@ -4017,7 +3952,6 @@
         private System.Windows.Forms.TabPage tabPage9;
         private System.Windows.Forms.TabPage tabPage12;
         private System.Windows.Forms.Panel panel38;
-        private System.Windows.Forms.Button btLuuCa;
         private System.Windows.Forms.Button btXoaCa;
         private System.Windows.Forms.Button btThemCa;
         private System.Windows.Forms.Button btSuaCa;
@@ -4032,7 +3966,7 @@
         private System.Windows.Forms.ComboBox cbhonnhan;
         private System.Windows.Forms.DateTimePicker dtNgaycap;
         private System.Windows.Forms.ComboBox cbChucvu;
-        private System.Windows.Forms.Button btXoa_CC;
+        private System.Windows.Forms.Button btnXoa_ChamCong;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.TextBox txtTen_CC;
         private System.Windows.Forms.TextBox txtHo_CC;
@@ -4083,8 +4017,6 @@
         private System.Windows.Forms.TextBox txtMaCN_HD;
         private System.Windows.Forms.TextBox txtMaCN_tkHD;
         private System.Windows.Forms.Label label62;
-        private System.Windows.Forms.Label label65;
-        private System.Windows.Forms.TextBox txtTenHD_HD;
         private System.Windows.Forms.Label label64;
         private System.Windows.Forms.TextBox txtKyhan_HD;
         private System.Windows.Forms.GroupBox groupBox10;
@@ -4125,7 +4057,6 @@
         private System.Windows.Forms.Button btTimLuong;
         private System.Windows.Forms.TabPage tabPage13;
         private System.Windows.Forms.Panel panel23;
-        private System.Windows.Forms.Button btLuuHSL;
         private System.Windows.Forms.Button btXoaHSL;
         private System.Windows.Forms.Button btThemHSL;
         private System.Windows.Forms.Button btSuaHSL;
@@ -4139,7 +4070,7 @@
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Button btHSL;
         private System.Windows.Forms.TextBox txtHSL;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtMaBHYT;
         private System.Windows.Forms.Label label36;
         private System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.Label label13;
