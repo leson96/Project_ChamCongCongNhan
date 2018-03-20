@@ -1094,7 +1094,12 @@ namespace ChamCong
 
         }
        
-
+        public bool TimKiemHopDong(string MaHD,string MaCN)
+        {
+            if (MaHD == "HD01" && MaCN == "CN01")
+                return true;
+            return false;
+        }
 
     }
 }

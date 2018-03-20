@@ -75,7 +75,11 @@ namespace UnitTestQLCN
             Assert.AreEqual(df.kthopdong("", "CN002"), false);
         }
       
-        
+        [TestMethod]
+        public void KTTimKiemHopDong()
+        {
+            Assert.AreEqual(df.TimKiemHopDong("HD01", "CN01"), true);
+        }
 
     }
 }
