@@ -101,5 +101,31 @@ namespace UnitTestQLCN
         {
             Assert.AreEqual(df.kthopdong("", "CN002"), false);
         }
+        [TestMethod]
+        public void TimKiemHopDongHopLeTest()
+        {
+            Assert.AreEqual(df.TimKiemHopDong("HD01", "CN001"), true);
+        }
+        [TestMethod]
+        public void TimKiemHopDongMaCNSaiTest()
+        {
+            Assert.AreEqual(df.TimKiemHopDong("HD01", "CN120"), false);
+        }
+        [TestMethod]
+        public void TimKiemHopDongMaHDSaiTest()
+        {
+            Assert.AreEqual(df.TimKiemHopDong("HD120", "CN001"), false);
+        }
+        [TestMethod]
+        public void TimKiemHopDongMaHDMaCNSaiTest()
+        {
+            Assert.AreEqual(df.TimKiemHopDong("HD120", "CN120"), false);
+        }
+
+        [TestMethod]
+        public void TimKiemHopDongMaHDMaCNRongTest()
+        {
+            Assert.AreEqual(df.TimKiemHopDong("", ""), false);
+        }
     }
 }

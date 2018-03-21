@@ -121,14 +121,29 @@
   <data name="person72" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\person72.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="table" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\table.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="outside-icon-lock-out-324500" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\outside-icon-lock-out-324500.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="ic_people_black_24dp" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\ic_people_black_24dp.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="little-table-grid_318-25351" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\little-table-grid_318-25351.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="update" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\update.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="164644-200" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\bin\Debug\Hinh\164644-200.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="efresh-4" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\efresh-4.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="hop dong" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\hop dong.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="detail72" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\detail72.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="refresh-round-symbol (1)" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\refresh-round-symbol (1).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="save" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\save.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -136,43 +151,43 @@
   <data name="delete" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\delete.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="164644-200" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\bin\Debug\Hinh\164644-200.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="Them" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Them.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="refresh-round-symbol" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\refresh-round-symbol.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="detail" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\detail.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Screen-Shot-2016-07-13-at-11-26-50-AM" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Screen-Shot-2016-07-13-at-11-26-50-AM.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="arrow-refresh-4-icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\arrow-refresh-4-icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="detail72" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\detail72.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="ic_people_black_24dp" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ic_people_black_24dp.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="update" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\update.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="outside-icon-lock-out-324500" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\outside-icon-lock-out-324500.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="table" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\table.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="ic_person_add_black_24dp" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\ic_person_add_black_24dp.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="table72" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\table72.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="detail1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\detail1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="little-table-grid_318-25351" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\little-table-grid_318-25351.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="table72" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\table72.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="check-in-512" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\check-in-512.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="Screen-Shot-2016-07-13-at-11-26-50-AM" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Screen-Shot-2016-07-13-at-11-26-50-AM.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="ic_attach_money_black_24dp" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\ic_attach_money_black_24dp.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="refresh-round-symbol_64" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\refresh-round-symbol_64.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

@@ -73,6 +73,16 @@ namespace ChamCong.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap arrow_refresh_4_icon {
+            get {
+                object obj = ResourceManager.GetObject("arrow-refresh-4-icon", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap check_in_512 {
             get {
                 object obj = ResourceManager.GetObject("check-in-512", resourceCulture);
@@ -116,6 +126,16 @@ namespace ChamCong.Properties {
         internal static System.Drawing.Bitmap detail72 {
             get {
                 object obj = ResourceManager.GetObject("detail72", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap efresh_4 {
+            get {
+                object obj = ResourceManager.GetObject("efresh-4", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -186,6 +206,36 @@ namespace ChamCong.Properties {
         internal static System.Drawing.Bitmap person72 {
             get {
                 object obj = ResourceManager.GetObject("person72", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap refresh_round_symbol {
+            get {
+                object obj = ResourceManager.GetObject("refresh-round-symbol", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap refresh_round_symbol__1_ {
+            get {
+                object obj = ResourceManager.GetObject("refresh-round-symbol (1)", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap refresh_round_symbol_64 {
+            get {
+                object obj = ResourceManager.GetObject("refresh-round-symbol_64", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
