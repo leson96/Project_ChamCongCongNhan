@@ -537,15 +537,6 @@ namespace ChamCong
                 MessageBox.Show(p.ToString());
             }
         }
-        public bool kthopdong(string mahd, string macn)
-        {
-            if (mahd == "HD01" && macn == "CN002")
-            {
-                return true;
-            }
-            else
-                return false;
-        }
         public void LoadTK()
         {
             try
@@ -1213,15 +1204,6 @@ namespace ChamCong
 
             //}
         }
-        public bool kttimkiem(string user)
-        {
-            if (user == "CN002")
-            {
-                return true;
-            }
-            else
-                return false;
-        }
 
         private void dgvCheck_CellClick(object sender, DataGridViewCellEventArgs e)
         {
@@ -1321,34 +1303,6 @@ namespace ChamCong
 
         }
 
-        public bool KiemTraCN(string MaNV, string Ho, string Ten, string GioiTinh, string NgaySinh, string
-                 NoiSinh, string CMND, string DanToc, string TonGiao, string
-                 QueQuan, string DCThuongTru, string NoiOHienNay, string
-                 DienThoaiNha, string DienThoaiDD, string Email, string TTrangHonNhan, string
-                 NgayTuyenDung, string NoiLamViec, string TrinhDoVanHoa, string MaHSL, string
-                 MaCV, string MaPhuCap, string TaiKhoanNganHang, string
-                 NgayCapCMND, string NoiCapCMND, string Hinh, string
-                 TinhTrangLamViec, string QuocTich, string MaBHYT, string MaBHXH)
-        {
-            if (MaNV.Length == 0 || Ho.Length == 0 || Ten.Length == 0 || GioiTinh.Length == 0 || NgaySinh.Length == 0 ||
-                 NoiSinh.Length == 0 || CMND.Length == 0 || DanToc.Length == 0 || TonGiao.Length == 0 ||
-                 QueQuan.Length == 0 || DCThuongTru.Length == 0 || NoiOHienNay.Length == 0 ||
-                 DienThoaiNha.Length == 0 || DienThoaiDD.Length == 0 || Email.Length == 0 || TTrangHonNhan.Length == 0 ||
-                 NgayTuyenDung.Length == 0 || NoiLamViec.Length == 0 || TrinhDoVanHoa.Length == 0 || MaHSL.Length == 0 ||
-                 MaCV.Length == 0 || MaPhuCap.Length == 0 || TaiKhoanNganHang.Length == 0 ||
-                 NgayCapCMND.Length == 0 || NoiCapCMND.Length == 0 || Hinh.Length == 0 ||
-                 TinhTrangLamViec.Length == 0 || QuocTich.Length == 0 || MaBHYT.Length == 0 || MaBHXH.Length == 0)
-            {
-                return false;
-            }
-            else
-            {
-                return true;
-            }
-        }
-
-
-
         private void btnXoa_ChamCong_Click(object sender, EventArgs e)
         {
 
@@ -1401,13 +1355,34 @@ namespace ChamCong
         //{
 
         //}
-        public bool TimKiemHopDong(string MaHD, string MaCN)
+        public int TimKiemHopDong(string MaHD, string MaCN)
         {
             if (MaHD == "HD01" && MaCN == "CN001")
-                return true;
-            return false;
+                return 1; //true
+            if (MaHD == "" && MaCN == "")
+                return 2; //false
+            if ((MaHD == "" && MaCN == "CN001") || (MaHD == "HD01" && MaCN == ""))
+                return 3; //false
+            return 0;//false
         }
 
+        public int KiemTraTimKiemCN(string user)
+        {
+            switch (user)
+            {
+                case "CN002":
+                    return 1;
+                    break;
+                case "":
+                    return 2;
+                    break;
+                case null:
+                    return 3;
+                    break;
+                default:
+                    return 0;
 
+            }
+        }
     }
 }

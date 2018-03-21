@@ -55,77 +55,55 @@ namespace UnitTestQLCN
         {
             Assert.AreEqual(dn._KiemTraDangNhapTEST("admin", "1111"), 2);
         }
-
         [TestMethod]
-        public void KiemTra_NhapKHRong()
+        public void KiemTraTimKiemCNTC()
         {
-            Assert.AreEqual(frm1.KiemTraCN("", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", ""), false);
+            Assert.AreEqual(frm1.KiemTraTimKiemCN("CN002"), 1);
         }
         [TestMethod]
-        public void KiemTra_NhapDayDu()
+        public void KiemTraTimKiemCNThatBai()
         {
-            Assert.AreEqual(frm1.KiemTraCN("CN01", "Le", "Son", "Nam", "30/10/1996", "TPHCM", "012345", "Kinh", "Khong", "Long An", "Long An", "BenLuc", "122455", "1222", "1@gmail.com", "Khong", "12/2017", "Quan12", "DaiHoc", "HSL1", "CV01", "MPC1", "TKNG", "2017", "BenLuc", "PIC", "DangLam", "VN", "BHYT1", "BHXH"), true);
+            Assert.AreEqual(frm1.KiemTraTimKiemCN("12345"), 0);
         }
         [TestMethod]
-        public void KiemTra_NhapThieu()
+        public void KiemTraTimKiemCNRong()
         {
-            Assert.AreEqual(frm1.KiemTraCN("CN01", "", null, "Nam", "30/10/1996", "TPHCM", "012345", "Kinh", "Khong", "Long An", "Long An", "BenLuc", "122455", "1222", "1@gmail.com", "Khong", "12/2017", "Quan12", "DaiHoc", "HSL1", "CV01", "MPC1", "TKNG", "2017", "BenLuc", "PIC", "DangLam", "VN", "BHYT1", "BHXH"), false);
-
+            Assert.AreEqual(frm1.KiemTraTimKiemCN(""), 2);
         }
         [TestMethod]
-        public void KiemTraTimKiemTC()
+        public void TimKiemHopDongHopLe()
         {
-            Assert.AreEqual(df.kttimkiem("CN002"), true);
+            Assert.AreEqual(frm1.TimKiemHopDong("HD01", "CN001"), 1);
         }
         [TestMethod]
-        public void KiemTraTKThatBai()
+        public void TimKiemHopDongMaCNSai()
         {
-            Assert.AreEqual(df.kttimkiem("12345"), false);
+            Assert.AreEqual(frm1.TimKiemHopDong("HD01", "CN120"), 0);
         }
         [TestMethod]
-        public void KiemTraRong()
+        public void TimKiemHopDongMaHDSai()
         {
-            Assert.AreEqual(df.kttimkiem(""), true);
+            Assert.AreEqual(frm1.TimKiemHopDong("HD120", "CN001"), 0);
         }
         [TestMethod]
-        public void TimHDThanhcong()
+        public void TimKiemHopDongMaHDMaCNSai()
         {
-            Assert.AreEqual(df.kthopdong("HD01", "CN002"), true);
-        }
-        public void TimHDthatbai()
-        {
-            Assert.AreEqual(df.kthopdong("", ""), false);
-        }
-        [TestMethod]
-        public void BoTrongMaHD()
-        {
-            Assert.AreEqual(df.kthopdong("", "CN002"), false);
-        }
-        [TestMethod]
-        public void TimKiemHopDongHopLeTest()
-        {
-            Assert.AreEqual(df.TimKiemHopDong("HD01", "CN001"), true);
-        }
-        [TestMethod]
-        public void TimKiemHopDongMaCNSaiTest()
-        {
-            Assert.AreEqual(df.TimKiemHopDong("HD01", "CN120"), false);
-        }
-        [TestMethod]
-        public void TimKiemHopDongMaHDSaiTest()
-        {
-            Assert.AreEqual(df.TimKiemHopDong("HD120", "CN001"), false);
-        }
-        [TestMethod]
-        public void TimKiemHopDongMaHDMaCNSaiTest()
-        {
-            Assert.AreEqual(df.TimKiemHopDong("HD120", "CN120"), false);
+            Assert.AreEqual(frm1.TimKiemHopDong("HD120", "CN120"), 0);
         }
 
         [TestMethod]
-        public void TimKiemHopDongMaHDMaCNRongTest()
+        public void TimKiemHopDongMaHDMaCNRong()
         {
-            Assert.AreEqual(df.TimKiemHopDong("", ""), false);
+            Assert.AreEqual(frm1.TimKiemHopDong("", ""), 2);
+        }
+        [TestMethod]
+        public void TimKiemHopDongMaHDRong()
+        {
+            Assert.AreEqual(frm1.TimKiemHopDong("", "CN001"), 3);
+        }
+        public void TimKiemHopDongMaCNRong()
+        {
+            Assert.AreEqual(frm1.TimKiemHopDong("HD01", ""), 3);
         }
     }
 }
